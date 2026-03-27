@@ -1,5 +1,5 @@
-export default function TextButton({ text, onClick }) {
+export default function TextButton({ text, onClick: callback }) {
   return (
-    <button className="component-text_button" onClick={onClick}>{text}</button>
+    <button className="component-text_button" onClick={callback}>{text}</button>
   );
 }
