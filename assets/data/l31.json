@@ -1,0 +1,82 @@
+{
+  "type": "puzzle",
+
+  "dialogue_island_3_intro": [
+    "It seems that this place is connected to CpE, specifically about its courses."
+  ],
+
+  "dialogue_level_1_intro": [
+    "It says here… piece to puzzle, complete to shine, connect them all, let skills align."
+  ],
+
+  "rules_level_1": [
+    "Connect all puzzle pieces correctly.",
+    "Each piece represents a CpE course.",
+    "Complete the full academic pathway puzzle to proceed."
+  ],
+
+  "elements_level_1_round_1_first_year_fundamentals": [
+    "Computer Engineering Orientation",
+    "Programming Logic And Design — Lab",
+    "Discrete Mathematics",
+    "Calculus-Based Physics — Lecture & Lab",
+    "Chemistry For Engineers — Lecture & Lab",
+    "Differential Calculus",
+    "Integral Calculus"
+  ],
+
+  "elements_level_1_round_2_second_year_circuits": [
+    "Electrical Circuits For CpE — Lecture & Lab",
+    "Electronic Circuits For CpE — Lecture & Lab",
+    "Logic Circuits & Design — Lecture & Lab",
+    "Differential Equations",
+    "Object Oriented Programming — Lab",
+    "Data Structures & Algorithm — Lab",
+    "Computer-Aided Drafting — Lab",
+    "Computer-Aided Drafting & Design — Lab",
+    "Engineering Data Analysis — Lecture & Lab"
+  ],
+
+  "elements_level_1_round_3_third_year_systems": [
+    "Numerical Methods & Analysis — Lecture & Lab",
+    "Computer Architecture & Organization — Lecture & Lab",
+    "Operating Systems",
+    "Introduction To H.D.L. — Lab",
+    "Microprocessor & Microcontroller Systems & Design — Lecture & Lab",
+    "Embedded Systems — Lecture & Lab",
+    "Fundamentals Of Mixed Signals & Sensors",
+    "Feedback & Control Systems",
+    "Data & Digital Communications",
+    "Data Signal Processing — Lecture & Lab",
+    "Engineering Management",
+    "Engineering Economics",
+    "Technopreneurship",
+    "Basic Occupational Safety & Health",
+    "Methods Of Research (Capstone Design Project 1)",
+    "CpE Elective 1"
+  ],
+
+  "elements_level_1_round_4_fourth_year_internships": [
+    "Computer Networks & Security — Lecture & Lab",
+    "Software Design — Lecture & Lab",
+    "Seminars & Field Trips — Drafting",
+    "Capstone Design Project 2 — Drafting",
+    "Capstone Design Project 3 — Drafting",
+    "CpE Laws & Professional Practice",
+    "Emerging Technologies In CpE",
+    "CpE Elective 2",
+    "CpE Elective 3",
+    "On-The-Job Training 1",
+    "On-The-Job Training 2"
+  ],
+
+  "feedback_level_1_after_game": [
+    "CpE is a 4-year degree program.",
+    "The puzzle shows the subjects you will go through if you choose CpE."
+  ],
+
+  "dialogue_level_1_end_game": [
+    "It seems that this place showed you all of the courses and subjects of CpE.",
+    "Hmm… I wonder what the next island is going to be?"
+  ]
+}

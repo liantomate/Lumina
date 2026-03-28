@@ -1,0 +1,64 @@
+{
+  "type": "ece-build",
+
+  "dialogue_level_2_intro": [
+    "Drag and place each component with care, letting logic guide your design.",
+    "When the rightful pieces unite in their proper order, the system awakens and springs to life before your eyes.",
+    "Should a false piece be set, the realm will tremble and the pieces return, urging you to try again."
+  ],
+
+  "rules_level_2": [
+    "Carefully drag and place each component in the correct order.",
+    "When all pieces are correctly arranged, the system activates.",
+    "If an incorrect component is placed, the screen shakes and the piece returns to inventory.",
+    "A guide will be provided if requested or after 10 failed attempts."
+  ],
+
+  "elements_level_2_round_1_materials": [
+    "1x Battery",
+    "1x Switch",
+    "8x Jumper Wires",
+    "2x LEDs",
+    "1x Buzzer",
+    "1x Push Button",
+    "3x Resistors"
+  ],
+
+  "elements_level_2_round_1_correct_order": [
+    "Place Breadboard",
+    "Connect Battery -> Breadboard (power rails)",
+    "Add Switch",
+    "Add Resistor",
+    "Connect LED 1",
+    "Connect LED 2",
+    "Add Buzzer",
+    "Add Push Button (control line)"
+  ],
+
+  "elements_level_2_round_1_final_setup": [
+    "Breadboard connected to battery",
+    "Switch installed",
+    "Resistor connected",
+    "LED 1 connected",
+    "LED 2 connected",
+    "Buzzer connected",
+    "Push button connected"
+  ],
+
+  "feedback_level_2_round_1_success": [
+    "System activated successfully.",
+    "Circuit stands in glory and fame."
+  ],
+
+  "feedback_level_2_round_1_failure": [
+    "Incorrect component placement.",
+    "Screen shakes.",
+    "Piece returns to inventory.",
+    "Try again."
+  ],
+
+  "feedback_level_2_round_1_guide": [
+    "Guide activated after 10 failed attempts.",
+    "Follow the correct order provided."
+  ]
+}
