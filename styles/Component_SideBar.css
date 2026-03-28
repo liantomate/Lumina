@@ -1,5 +1,5 @@
 .component-sidebar {
-    position: absolute;
+    position: fixed;
     top: 200px;
     left: 60px;
 

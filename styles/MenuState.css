@@ -1,0 +1,7 @@
+.component-background
+{
+    height: calc(4 * 300vh);
+    width: 100%;
+    background: linear-gradient(180deg, #4287f5 0%, #73a9ff 25%, #8a9cba 50%, #d6b767 75%, #fffd96 100%);
+    position: absolute;
+}
