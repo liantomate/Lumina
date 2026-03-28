@@ -19,12 +19,14 @@ export default function SideBar() {
             <PopupPanel isActive={activePanel === "achievements"} setActive={setActivePanel} children={<h1>Achievements</h1>} />
             <PopupPanel isActive={activePanel === "settings"} setActive={setActivePanel} children={<h1>Settings</h1>} />
             <PopupPanel isActive={activePanel === "more-settings"} setActive={setActivePanel} children={<h1>More Settings</h1>} />
-        <IconButton imagePath="../../assets/svgs/github_icon.svg" callback={() => {
-            window.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
-        }} />
-        <IconButton imagePath="../../assets/svgs/wikipedia_icon.svg" callback={() => {
-            window.open("https://en.wikipedia.org/wiki/Computer_engineering", "_blank");
-        }}/>
+        <div className="component-sidebar-icon_buttons">
+            <IconButton imagePath="../../assets/svgs/github_icon.svg" callback={() => {
+                window.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
+            }} />
+            <IconButton imagePath="../../assets/svgs/wikipedia_icon.svg" callback={() => {
+                window.open("https://en.wikipedia.org/wiki/Computer_engineering", "_blank");
+            }}/>
+        </div>
         </div>
     </>);
 }
