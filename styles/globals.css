@@ -29,3 +29,21 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@media (prefers-color-scheme: light) {
+    body{
+        background-color: var(--bg-primary-light);
+        color: var(--text-inverse);
+    }
+}
+
+body {
+   background-color: var(--bg-primary-dark);
+   color: var(--text-main);
+   font-family: 'VT323', 'Courier New', monospace;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+}
