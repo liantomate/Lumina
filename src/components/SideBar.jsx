@@ -8,19 +8,17 @@ import IconButton from "./IconButton";
 import PopupPanel from "./PopupPanel";
 
 export default function SideBar() {
-    const [isSettingsPanelOpen, setIsSettingsPanelOpen] = useState(false);
-    const [isAchievementsPanelOpen, setIsAchievementsPanelOpen] = useState(false);
-    const [isMoreSettingsPanelOpen, setIsMoreSettingsPanelOpen] = useState(false);
+    const [activePanel, setActivePanel] = useState(null);
 
     return (<>
         <div className="component-sidebar">
-            <TextButton text="Achievements"  callback={() => setIsAchievementsPanelOpen(true)} />
-            <TextButton text="Settings"      callback={() => setIsSettingsPanelOpen(true)} />
-            <TextButton text="More Settings" callback={() => setIsMoreSettingsPanelOpen(true)} />
+            <TextButton text="Achievements"  callback={() => setActivePanel("achievements")} />
+            <TextButton text="Settings"      callback={() => setActivePanel("settings")} />
+            <TextButton text="More Settings" callback={() => setActivePanel("more-settings")} />
 
-            <PopupPanel isActive={isSettingsPanelOpen} setActive={setIsSettingsPanelOpen} children={<h1>Settings</h1>} />
-            <PopupPanel isActive={isAchievementsPanelOpen} setActive={setIsAchievementsPanelOpen} children={<h1>Achievements</h1>} />
-            <PopupPanel isActive={isMoreSettingsPanelOpen} setActive={setIsMoreSettingsPanelOpen} children={<h1>More Settings</h1>} />
+            <PopupPanel isActive={activePanel === "achievements"} setActive={setActivePanel} children={<h1>Achievements</h1>} />
+            <PopupPanel isActive={activePanel === "settings"} setActive={setActivePanel} children={<h1>Settings</h1>} />
+            <PopupPanel isActive={activePanel === "more-settings"} setActive={setActivePanel} children={<h1>More Settings</h1>} />
         <IconButton imagePath="../../assets/svgs/github_icon.svg" callback={() => {
             window.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
         }} />
