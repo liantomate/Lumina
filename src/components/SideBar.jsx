@@ -10,8 +10,12 @@ export default function SideBar() {
             <TextButton text="Settings"      callback={() => {}} />
             <TextButton text="More Settings" callback={() => {}} />
 
-            <IconButton imagePath="../../assets/images/github_icon.png" callback={() => {}} />
-            <IconButton imagePath="../../assets/images/wikipedia_icon.png" callback={() => {}} />
+            <IconButton imagePath="../../assets/images/github_icon.png" callback={() => {
+            windows.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
+        }} />
+        <IconButton imagePath="../../assets/images/wikipedia_icon.png" callback={() => {
+            windows.open("https://wikipedia.org", "_blank");
+        }}/>
         </div>
     </>);
 }
