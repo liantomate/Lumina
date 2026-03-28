@@ -1,5 +1,7 @@
+import "../../styles/MenuState.css";
+
+import NavigationBar from "../components/NavigationBar";
 import SideBar from "../components/SideBar";
-import IconButton from "../components/IconButton";
 
 export default function MenuState()
 {
@@ -9,6 +11,6 @@ export default function MenuState()
 
         </div>
         <SideBar className="freeze" />
-        <NavigationBar className="freeze" logoPath={"../../assets/images/logo.png"} title={"Lumina"} progress={"20"}/>
+        <NavigationBar className="freeze" logoPath={"../../assets/images/logo.png"} title={"Lumina"} progress={20}/>
     </>);
 }
