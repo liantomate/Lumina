@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 2em;
 
     height: 100%;
 }
@@ -18,4 +19,7 @@ div.component-sidebar .component-sidebar-text_buttons {
 
 div.component-sidebar .component-sidebar-icon_buttons {
     padding-bottom: 2em;
+    display: flex;
+    justify-content: start;
+    gap: 1em;
 }
