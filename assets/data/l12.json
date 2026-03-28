@@ -1,0 +1,11 @@
+{
+    "name": "Interest",
+    "type": "questionnaire",
+    "rounds_list": [
+        "1201",
+        "1202",
+        "1203",
+        "1204",
+        "1205"
+    ]
+}

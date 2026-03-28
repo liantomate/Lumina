@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "Would you enjoy a project that uses technology a lot?",
+    "options": [
+        "a) Yes! That sounds exciting!",
+        "b) Yes. I can somehow manage.",
+        "c) Neutral. I don’t mind either way.",
+        "d) No. I’d rather keep it minimal."
+    ],
+    "points": [
+        4,
+        3,
+        2,
+        1
+    ]
+}

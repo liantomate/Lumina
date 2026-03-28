@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "When solving a problem, how likely are you to use technology?",
+    "options": [
+        "a) I use it all the time! It's my first choice!",
+        "b) I use it often, along with other ways.",
+        "c) Sometimes. Only if it’s convenient.",
+        "d) Rarely. I stick to non-digital solutions."
+    ],
+    "points": [
+        4,
+        3,
+        2,
+        1
+    ]
+}

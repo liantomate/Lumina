@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "How often do you use technology in your day-to-day life?",
+    "options": [
+        "a) All. the. time. I rely on it heavily.",
+        "b) Pretty often. I enjoy using it.",
+        "c) Sometimes. Only when I need to.",
+        "d) Rarely. I avoid it if I can."
+    ],
+    "points": [
+        4,
+        3,
+        2,
+        1
+    ]
+}

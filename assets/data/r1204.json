@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "How comfortable are you experimenting with new apps or devices?",
+    "options": [
+        "a) Very comfortable! I like exploring everything!",
+        "b) Comfortable. I try things out carefully.",
+        "c) A bit unsure. I generally need guidance.",
+        "d) Not comfortable. I avoid experimenting."
+    ],
+    "points": [
+        4,
+        3,
+        4,
+        1
+    ]
+}

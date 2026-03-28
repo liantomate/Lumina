@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "How excited are you to try and learn new software or digital tools?",
+    "options": [
+        "a) Super excited! I love exploring new tools!",
+        "b) Kind of excited? I’m willing to try tho!",
+        "c) Neutral. I don’t mind learning.",
+        "d) Not interested… I prefer traditional methods."
+    ],
+    "points": [
+        4,
+        3,
+        2,
+        1
+    ]
+}
