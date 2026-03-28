@@ -12,21 +12,23 @@ export default function SideBar() {
 
     return (<>
         <div className="component-sidebar">
-            <TextButton text="Achievements"  callback={() => setActivePanel("achievements")} />
-            <TextButton text="Settings"      callback={() => setActivePanel("settings")} />
-            <TextButton text="More Settings" callback={() => setActivePanel("more-settings")} />
+            <div className="component-sidebar-text_buttons">
+                <TextButton text="Achievements"  callback={() => setActivePanel("achievements")} />
+                <TextButton text="Settings"      callback={() => setActivePanel("settings")} />
+                <TextButton text="More Settings" callback={() => setActivePanel("more-settings")} />
+            </div>
 
             <PopupPanel isActive={activePanel === "achievements"} setActive={setActivePanel} children={<h1>Achievements</h1>} />
             <PopupPanel isActive={activePanel === "settings"} setActive={setActivePanel} children={<h1>Settings</h1>} />
             <PopupPanel isActive={activePanel === "more-settings"} setActive={setActivePanel} children={<h1>More Settings</h1>} />
-        <div className="component-sidebar-icon_buttons">
-            <IconButton imagePath="../../assets/svgs/github_icon.svg" callback={() => {
-                window.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
-            }} />
-            <IconButton imagePath="../../assets/svgs/wikipedia_icon.svg" callback={() => {
-                window.open("https://en.wikipedia.org/wiki/Computer_engineering", "_blank");
-            }}/>
-        </div>
+            <div className="component-sidebar-icon_buttons">
+                <IconButton imagePath="../../assets/svgs/github_icon.svg" callback={() => {
+                    window.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
+                }} />
+                <IconButton imagePath="../../assets/svgs/wikipedia_icon.svg" callback={() => {
+                    window.open("https://en.wikipedia.org/wiki/Computer_engineering", "_blank");
+                }}/>
+            </div>
         </div>
     </>);
 }
