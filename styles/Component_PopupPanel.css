@@ -33,18 +33,25 @@
 
 .component-popup_panel > button:first-child {
     position: absolute !important;
-    top: -10px !important;
-    right: 5px !important;
-    width: 55px !important;
-    height: 55px !important;
+    top: 15px !important;
+    right: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
     z-index: 1001 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 
     background-color: #d61d08 !important;
-    border-color: #520b03 !important;
+    border-color: #7a0f03 !important;
 
+}
+
+.component-popup_panel > button:first-child img[src*="exit_icon"] {
+    width: 60%;
+    height: 60%;
+    display: block;
+    margin: auto;
 }
 
 .component-popup_panel > button:first-child:hover {
@@ -68,9 +75,9 @@
 
 .component-popup_panel h1 { /*Edit this if want to change the font that are inside the popup*/
     font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
-    font-size: 3.5rem !important;
+    font-size: 3rem !important;
     color: var(--text-inverse) !important;
-    margin: 10px 0 !important;
+    margin: 0px 0 !important;
     text-transform: uppercase !important;
 }
 
