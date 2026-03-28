@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "Do you prefer to work on your own or with others?",
+    "options": [
+        "I love working in a team.",
+        "I usually prefer a team.",
+        "I like working alone most of the time.",
+        "I always like to work by myself."
+    ],
+    "points": [
+        3,
+        3,
+        2,
+        1
+    ]
+}

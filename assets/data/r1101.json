@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "When you run into a tricky problem, what do you usually do? (Select all that apply).",
+    "options": [
+        "Take it step by step and figure it out carefully.",
+        "Go with my gut and move fast, using intuition.",
+        "Talk it out or brainstorm with others.",
+        "Honestly, I tend to avoid it if I can."
+    ],
+    "points": [
+        2,
+        3,
+        3,
+        0
+    ]
+}

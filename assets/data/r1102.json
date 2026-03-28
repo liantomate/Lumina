@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "When learning new skills, which do you prefer?  (Select all that apply).",
+    "options": [
+        "I like practicing on my own.",
+        "By watching tutorials or demos first.",
+        "Chatting with friends and learning together.",
+        "Jump in and try things hands-on."
+    ],
+    "points": [
+        2,
+        1,
+        3,
+        3
+    ]
+}

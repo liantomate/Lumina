@@ -1,0 +1,16 @@
+{
+    "type": "multiple_choices",
+    "question": "When working in a group, what’s usually your role?",
+    "options": [
+        "I usually lead or coordinate the team.",
+        "I research, analyze, or provide data.",
+        "I support others where help is needed.",
+        "I mostly observe or stay in the background."
+    ],
+    "points": [
+        3,
+        3,
+        2,
+        1
+    ]
+}
