@@ -1,0 +1,68 @@
+/*name temporary*/
+.mcq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 800px;
+    gap: 20px;
+}
+
+.mcq-question-box {
+    width: 100%;
+    min-height: 200px;
+
+    background-color: var(--ui-box-primary-light);
+    border: 8px solid var(--ui-accent);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px;
+
+    box-shadow: inset 4px 4px 0px 0px rgba(255, 255, 255, 0.3);
+}
+
+.mcq-container-box p {
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 2.2rem;
+    color: var(--text-inverse);
+    text-align: justify;
+    line-height: 1.4;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.mcg-buttons {
+    background-color: var(--ui-box-primary-light);
+    border: 8px solid var(--ui-accent);
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 3rem;
+    color: var(--text-inverse);
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.mcq-buttons:hover {
+    background-color: #FFF066;
+    transform: scale(1.03);
+}
+
+.mcq-buttons:active {
+    transform: scale(0.95);
+    background-color: var(--ui-accent);
+    color: var(--text-main);
+}
