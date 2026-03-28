@@ -1,0 +1,35 @@
+.questionnaire-multiple_choices, .questionnaire-multiple_selections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+    gap: 20px;
+}
+
+.questionnaire-multiple_choices >:first-child, .questionnaire-multiple_selections >:first-child { /*TEXT BOX*/
+    width: 100% ;
+    height: 250px !important;
+    padding: 30px !important;
+}
+
+.questionnaire-multiple_choices >:nth-child(2), .questionnaire-multiple_selections >:nth-child(2) { /*OPTIONS CONTAINER*/
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/*Styling for the choices box (Forced)*/
+.questionnaire-multiple_choices > :nth-child(2) > *, .questionnaire-multiple_selections > :nth-child(2) > * {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 80px;
+    padding: 15px;
+}

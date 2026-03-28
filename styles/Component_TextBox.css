@@ -1,0 +1,26 @@
+.component-textbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 35px;
+    box-sizing: border-box;
+
+    background-color: var(--ui-box-primary-dark);
+    border: 6px solid var(--ui-accent);
+
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 2.2rem;
+    color: var(--text-inverse);
+    text-align: center;
+    line-height: 1.5;
+
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    overflow-y: auto;
+}
+
+.component-textbox p, .component-textbox span {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+}
