@@ -22,13 +22,6 @@
     --neutral-dark-dark: #111111;
 }
 
-*
-{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 /*Primary-Font*/
 @font-face {
     font-family: 'Gamer';
@@ -38,10 +31,30 @@
 }
 
 @media (prefers-color-scheme: light) {
-    body{
-        background-color: var(--bg-primary-light);
-        color: var(--text-inverse);
+    :root{
+        --bg-primary-dark: var(--bg-primary-light);
+        --bg-secondary-dark: var(--bg-secondary-light);
+        --ui-landsape-dark: var(--ui-landscape-light);
+        --ui-box-primary-dark: var(--ui-box-primary-light);
+        --text-main: #111111;
+        --text-inverse: #FFFFFF;
     }
+}
+
+[data-theme="dark"] {
+    --bg-primary-dark: #01182D;
+    --bg-secondary-dark: #000A14;
+    --ui-landsape-dark: #153A06;
+    --ui-box-primary-dark: #DAB900;
+    --text-main: #FFFFFF;
+    --text-inverse: #111111;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -53,4 +66,8 @@ body {
 
 h1, h2, h3 {
     font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+}
+
+*,*::before, *::after {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
