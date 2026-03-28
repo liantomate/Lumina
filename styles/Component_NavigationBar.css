@@ -4,7 +4,7 @@
     height: 90px;
 }
 
-h1 {
+img[alt="Logo"] + h1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@ h1 {
     z-index: 10;
 }
 
-h1::before {
+img[alt="Logo"] + h1::before {
     content: "";
     position: absolute;
     top: 0;
@@ -46,12 +46,12 @@ img[alt="Logo"] {
     background-color: var(--neutral-dark-dark); /*Temporary until logo shows up*/
 }
 
-h1 + * {
+img[alt="Logo"] + h1 + * {
     position: fixed !important;
     top: 35px !important; 
     right: 40px !important; 
     width: 400px !important;
-    
+
     z-index: 20 !important;
 }
 

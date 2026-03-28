@@ -1,0 +1,58 @@
+.component-popup_panel:not(:has(*)) {
+    display: none !important;
+    animation: none !important;
+}
+
+.component-popup_panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    width: 600px;
+    height: auto;
+    min-height: 400px;
+    padding: 0px;
+    
+    background-color: var(--ui-box-primary-dark);
+    border: 6px solid var(--ui-accent);
+    border-radius: 0 !important;
+
+    overflow-x: hidden !important;
+}
+
+
+
+.component-popup_panel > button:first-child {
+    position: absolute !important;
+    top: -10px !important;
+    right: 5px !important;
+    width: 55px !important;
+    height: 55px !important;
+    z-index: 1001 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    background-color: #d61d08 !important;
+    border-color: #520b03 !important;
+
+}
+
+.component-popup_panel > :nth-child(2) {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: right !important;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.component-popup_panel h1 { /*Edit this if want to change the font that are inside the popup*/
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 3.5rem !important;
+    color: var(--text-inverse) !important;
+    margin: 10px 0 !important;
+    text-transform: uppercase !important;
+}
