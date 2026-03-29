@@ -34,7 +34,7 @@ export default function QuestionnaireState({ levelData })
     return (<>
         <div className="questionnaire-navbar">
             <ProgressBar className="questionnaire-progress_bar" value={(round / levelData.rounds_list.length) * 100} />
-            <IconButton className="questionnaire-navbar-exit_button" iconPath={"../../assets/svgs/exit_icon.svg"} callback={() => {
+            <IconButton className="questionnaire-navbar-exit_button" imagePath={"../../assets/svgs/exit_icon.svg"} callback={() => {
                 globalStateManager.setState(STATE_TYPES.MENU);
             }} />
         </div>

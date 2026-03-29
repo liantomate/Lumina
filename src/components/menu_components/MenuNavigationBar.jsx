@@ -1,6 +1,6 @@
-import "../../styles/Component_NavigationBar.css"
+import "../../../styles/Component_MenuNavigationBar.css"
 
-import ProgressBar from "./ProgressBar"
+import ProgressBar from "../ProgressBar"
 
 export default function NavigationBar({ logoPath, title, progress })
 {

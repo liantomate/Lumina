@@ -1,4 +1,4 @@
-import "../../styles/Component_IslandButton.css";
+import "../../../styles/Component_IslandButton.css";
 
 export default function IslandButton({ imageSrc, yPos, scale, callback }) {
     return (

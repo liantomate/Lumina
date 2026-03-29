@@ -1,10 +1,10 @@
 import "../../styles/MenuState.css";
 import { useEffect, useRef } from "react";
 
-import NavigationBar from "../components/NavigationBar";
-import SideBar from "../components/SideBar";
+import NavigationBar from "../components/menu_components/MenuNavigationBar";
+import SideBar from "../components/menu_components/MenuSideBar";
 
-import IslandButton from "../components/IslandButton";
+import IslandButton from "../components/menu_components/IslandButton";
 
 import global_StateManager from "./StateManager";
 import { STATE_TYPES } from "./StateTypes";

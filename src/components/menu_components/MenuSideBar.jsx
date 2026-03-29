@@ -1,11 +1,11 @@
-import "../../styles/Component_SideBar.css"
+import "../../../styles/Component_MenuSideBar.css"
 
 import { useState } from "react";
 
-import TextButton from "./TextButton"; 
-import IconButton from "./IconButton"; 
+import TextButton from "../TextButton"; 
+import IconButton from "../IconButton"; 
 
-import PopupPanel from "./PopupPanel";
+import PopupPanel from "../PopupPanel";
 
 export default function SideBar() {
     const [activePanel, setActivePanel] = useState(null);
