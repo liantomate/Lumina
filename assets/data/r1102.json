@@ -1,5 +1,5 @@
 {
-    "type": "multiple_choices",
+    "type": "multiple_selections",
     "question": "When learning new skills, which do you prefer?  (Select all that apply).",
     "options": [
         "I like practicing on my own.",

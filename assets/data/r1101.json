@@ -1,5 +1,5 @@
 {
-    "type": "multiple_choices",
+    "type": "multiple_selections",
     "question": "When you run into a tricky problem, what do you usually do? (Select all that apply).",
     "options": [
         "Take it step by step and figure it out carefully.",

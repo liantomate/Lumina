@@ -1,6 +1,6 @@
 {
     "type": "multiple_choices",
-    "question": "How comfortable are you with technological tools (Cellphone, laptop, computer, etc.)? (Select all that apply).",
+    "question": "How comfortable are you with technological tools (Cellphone, laptop, computer, etc.)?",
     "options": [
         "Very comfortable. I pick things up quickly.",
         "Pretty comfortable. I can manage with a little help.",

@@ -12,7 +12,11 @@ export default function QuestionnaireRound({ roundData, round, setRound })
                 <TextBox className="questionnaire-question" text={roundData.question} />
                 <div className={roundData.type === "multiple_choices" ? "questionnaire-multiple_choices-options" : "questionnaire-multiple_selections-options"}>
                     {roundData.options.map((choice, index) => (
-                        <TextButton key={index} text={choice} callback={() => {setRound(round + 1);}} />
+                        roundData.type === "multiple_choices" ? (
+                            <TextButton key={index} text={choice} callback={() => {setRound(round + 1);}} />
+                        ) : (
+                            <TextButton key={index} text={choice} callback={() => {}} />
+                        )
                     ))}
                 </div>
                 {(roundData.type === "multiple_selections") &&
