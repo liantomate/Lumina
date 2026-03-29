@@ -11,11 +11,11 @@ import ROUND_DATA from "../core/RoundData";
 
 export default function LevelState({ levelData })
 {
-    const levelHandler = new LevelHandler(levelData);
     const [roundFinished, setRoundFinished] = useState(0);
+    const levelHandler = new LevelHandler(levelData, roundFinished, setRoundFinished);
 
     return (<>
         <LevelNavigationBar progress={ ( roundFinished / levelData.rounds_list.length ) * 100 }/>
-        <RoundRenderer levelHandler={ levelHandler }  setRoundFinished={ setRoundFinished }/>
+        <RoundRenderer className="level-round_renderer" levelHandler={ levelHandler }  setRoundFinished={ setRoundFinished }/>
     </>);
 }
