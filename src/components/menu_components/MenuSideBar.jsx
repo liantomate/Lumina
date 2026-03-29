@@ -25,7 +25,7 @@ export default function SideBar() {
                 <IconButton imagePath="../../assets/svgs/github_icon.svg" callback={() => {
                     window.open("https://github.com/liantomate/web_design_cpe_olympiad_2026", "_blank");
                 }} />
-                <IconButton imagePath="../../assets/svgs/wikipedia_icon.svg" callback={() => {
+                <IconButton imagePath="../../assets/svgs/info_icon.svg" callback={() => {
                     window.open("https://www.computerscience.org/careers/computer-engineering/", "_blank");
                 }}/>
             </div>
