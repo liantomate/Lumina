@@ -1,5 +1,88 @@
-.round-island01_article {
+.round-island01_article
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    min-height: 400px;
+    
+    padding-top: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+.round-island01_article-panel
+{
+    background-color: var(--ui-box-primary-dark);
+    border: 4px solid var(--ui-accent);
+    outline: 4px solid var(--bg-secondary-dark);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    box-shadow: inset -4px -4px 0px rgba(0, 0, 0, 0.15); 
+}
+
+.round-island01_article-header
+{
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 3rem;
+    color: var(--neutral-dark-dark); 
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.round-island01_article-content
+{
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 2rem;
+    color: var(--neutral-dark-dark);
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.round-island01_article-buttons
+{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.round-island01_article-button
+{
+    background-color: var(--ui-box-primary-dark);
+    border: 4px solid var(--bg-secondary-dark);
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 1.8rem;
+    padding: 0.5rem 1.5rem;
+    color: var(--neutral-dark-dark);
+    cursor: pointer;
+    text-transform: uppercase;
+    
+    box-shadow: 4px 4px 0px var(--bg-secondary-dark); 
+    transition: transform 0.1s, box-shadow 0.1s, background-color 0.3s ease;
+}
+
+.round-island01_article-button:hover
+{
+    background-color: var(--ui-box-primary-light); 
+}
+
+.round-island01_article-button:active
+{
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--bg-secondary-dark);
+}
+
+.round-island01_article-button_active
+{
+    background-color: var(--neutral-light-dark); 
+    color: var(--bg-secondary-dark);
 }
