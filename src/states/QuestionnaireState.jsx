@@ -13,6 +13,8 @@ import { STATE_TYPES } from "./StateTypes";
 import global_UserData from "../core/UserData";
 import ROUND_DATA from "../core/RoundData";
 
+import LevelNavigationBar from "../components/level_components/LevelNavigationBar";
+
 export default function QuestionnaireState({ levelData })
 {
     if(levelData.type !== "questionnaire") return <h1>Invalid questionnaire: {`${levelData}`}</h1>
@@ -29,10 +31,7 @@ export default function QuestionnaireState({ levelData })
 
     return (<>
         <div className="questionnaire-navbar">
-            <ProgressBar className="questionnaire-progress_bar" value={(round / levelData.rounds_list.length) * 100} />
-            <IconButton className="questionnaire-navbar-exit_button" imagePath={"../../assets/svgs/exit_icon.svg"} callback={() => {
-                globalStateManager.setState(STATE_TYPES.MENU);
-            }} />
+            <LevelNavigationBar progress={(round / levelData.rounds_list.length) * 100} />
         </div>
         <QuestionnaireRound roundData={ROUND_DATA["r" + levelData.rounds_list[round]]} round={round} setRound={setRound} />
     </>);
