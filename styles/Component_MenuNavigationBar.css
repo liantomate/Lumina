@@ -1,57 +1,70 @@
 .component-navigation_bar {
     position: fixed;
     width: 100%;
-    height: 10%;
-}
-
-img[alt="Logo"] + h1 {
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 90px;
     background-color: var(--bg-secondary-dark);
-    margin-top: 0;
-    
-    padding-left: 120px;
-    font-size: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    gap: 20px;
+    flex-wrap: wrap; /* allow wrapping */
+    z-index: 100;
+}
+
+/* Logo */
+.nav-logo {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0; /* don't shrink */
+}
+
+/* Title */
+.nav-title {
+    font-size: 3.5rem; /* big font like original */
     color: var(--text-main);
     text-transform: uppercase;
     letter-spacing: 2px;
-    align-items: center;
-
-    display: flex;
-    z-index: 10;
+    margin: 0;
+    flex-shrink: 0;
 }
 
-img[alt="Logo"] + h1::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+/* Progress Bar */
+.component-progress_bar-outer {
+    flex: 1;               /* take remaining space */
+    min-width: 150px;      /* prevent it from shrinking too much */
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.component-progress_bar-inner {
     height: 100%;
-    background-color: var(--bg-secondary-dark);
-    z-index: -1;
-
+    background-color: #4caf50;
+    transition: width 0.3s ease;
 }
 
-img[alt="Logo"] {
-    position: fixed !important;
-    top: 20px !important;
-    left: 40px !important;
-    width: 50px !important;
-    height: 50px !important;
-    z-index: 11 !important;
-    background-color: var(--neutral-dark-dark); /*Temporary until logo shows up*/
+/* Small screens: stack title + progress bar, hide logo */
+@media (max-width: 600px) {
+    .component-navigation_bar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        display: none; /* hide logo */
+    }
+
+    .nav-title {
+        font-size: 3.5rem; /* keep title big */
+    }
+
+    .component-progress_bar-outer {
+        width: 100%; /* full width */
+    }
 }
-
-img[alt="Logo"] + h1 + * {
-    position: fixed !important;
-    top: 35px !important; 
-    right: 40px !important; 
-    width: 400px !important;
-
-    z-index: 20 !important;
-}
-
