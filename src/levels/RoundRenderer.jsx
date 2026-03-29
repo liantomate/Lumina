@@ -11,10 +11,13 @@ export default function RoundRenderer({ levelHandler })
     // multiple selections round
     // literally everything else
     
+    if(!roundData) return <CongratulationsRound levelHandler={levelHandler} />;
+
     if(roundData.type === "multiple_choices" || roundData.type === "multiple_selections")
         return <QuestionnaireRound levelHandler={levelHandler} />;
-
-    return <CongratulationsRound levelHandler={levelHandler} />;
+    
+    
+    return <h1>Invalid Round</h1>   
 
     // below are the "everything else" rounds
 }

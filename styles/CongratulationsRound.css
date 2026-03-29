@@ -1,0 +1,103 @@
+.congrats-main-rect {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px; /* space between left and right halves */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Left column */
+.congrats-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* vertical space between boxes */
+}
+
+/* Right column */
+.congrats-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Top small box in right column */
+.congrats-right-top {
+    flex: 0 0 25%; /* small top rectangle */
+    background-color: var(--ui-box-primary-light);
+    border: 4px solid var(--ui-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Bottom large box in right column */
+.congrats-right-main {
+    flex: 1; /* fills remaining space */
+    background-color: var(--ui-box-primary-light);
+    border: 4px solid var(--ui-accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Individual left achievement boxes */
+.congrats-left > .congrats-achievement {
+    background-color: var(--ui-box-primary-light);
+    border: 4px solid var(--ui-accent);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-height: 80px;
+    box-sizing: border-box;
+}
+
+/* Achievement icon */
+.congrats-achievement img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Achievement title */
+.congrats-achievement h1 {
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Achievement description */
+.congrats-achievement p {
+    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
+    font-size: 1.5rem;
+    margin: 5px 0 0 0;
+    text-align: center;
+}
+
+.congrats-main-rect {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-direction: row;
+
+    /* full screen minus navbar */
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px);
+    margin-top: 90px;
+
+    overflow-y: auto; /* scroll if needed */
+}
