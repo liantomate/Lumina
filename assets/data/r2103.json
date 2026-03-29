@@ -3,8 +3,8 @@
     "pieces":
     [
         "START\nscore = 0",
-        "FOR each answer\n\tscore = score + points\nEND FOR",
-        "IF score in range THEN\n\tdisplay matching title\nEND IF",
+        "FOR answer IN answers\n\tscore += answer.points\nEND FOR",
+        "IF score in range1 THEN DISPLAY `Title A`\nELSE IF score in range2 THEN DISPLAY `Title B`\nELSE DISPLAY `Title C`",
         "END"
     ],
     "initial_order":
@@ -21,5 +21,5 @@
         2,
         3
     ],
-    "message": "The program adds up the points from all your answers. After getting the total score, it checks which score range you fall into, then shows the title and description that best match your result."
+    "message": "This code takes all the answers you gave in a quiz and adds up their points to get your total score. Then, it checks which score range your total falls into and shows the title that matches your score. Basically, it tells you your result based on how well you answered."
 }
