@@ -15,7 +15,7 @@
     min-height: 400px;
     padding: 0px;
     
-    background-color: var(--ui-box-primary-dark);
+    background-color: var(--ui-box-primary-light);
     border: 6px solid var(--ui-accent);
     border-radius: 0 !important;
 
