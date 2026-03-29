@@ -1,0 +1,25 @@
+{
+    "type": "island_02-levels",
+    "pieces":
+    [
+        "START\nhighest = 0",
+        "FOR each playerScore\n\tIF playerScore > highest THEN\n\t\thighest = playerScore",
+        "END IF\nEND FOR\nDISPLAY highest",
+        "END"
+    ],
+    "initial_order":
+    [
+        3,
+        1,
+        0,
+        2
+    ],
+    "correct_order":
+    [
+        0,
+        1,
+        2,
+        3
+    ],
+    "message": "The program checks all scores and finds the highest one to display."
+}

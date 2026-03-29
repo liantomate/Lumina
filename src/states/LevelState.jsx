@@ -7,8 +7,6 @@ import { useState } from "react";
 import LevelHandler from "../levels/LeveHandler";
 import RoundRenderer from "../levels/RoundRenderer";
 
-import ROUND_DATA from "../core/RoundData";
-
 export default function LevelState({ levelData })
 {
     const [roundFinished, setRoundFinished] = useState(0);

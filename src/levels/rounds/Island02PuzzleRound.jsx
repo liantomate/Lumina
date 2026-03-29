@@ -1,83 +1,88 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../../../styles/Island02PuzzleRound.css"
 
 export default function Island02PuzzleRound({ levelHandler })
 {
-    const piecesData = levelHandler.getCurrentRoundData().pieces;
-    const initialOrder = levelHandler.getCurrentRoundData().initial_order;
-    const correctOrder = levelHandler.getCurrentRoundData().correct_order;
-    const messageData = levelHandler.getCurrentRoundData().message;
+    const roundData = levelHandler.getCurrentRoundData();
+    const piecesData = roundData.pieces;
+    const initialOrder = roundData.initial_order;
+    const correctOrder = roundData.correct_order;
+    const messageData = roundData.message;
 
-    const [placedItems, setPlacedItems] = useState(Array(correctOrder.length).fill(null))
-    const [availableItems, setAvailableItems] = useState(initialOrder)
-    const [isError, setIsError] = useState(false)
-    const [isFinished, setIsFinished] = useState(false)
+    const [placedItems, setPlacedItems] = useState(Array(correctOrder.length).fill(null));
+    const [availableItems, setAvailableItems] = useState(initialOrder);
+    const [isError, setIsError] = useState(false);
+    const [isFinished, setIsFinished] = useState(false);
+
+    useEffect(() => {
+        setPlacedItems(Array(correctOrder.length).fill(null));
+        setAvailableItems(initialOrder);
+        setIsError(false);
+        setIsFinished(false);
+    }, [roundData, correctOrder.length, initialOrder]);
 
     const HandlePoolClick = (cardId) =>
     {
-        const firstEmptyIndex = placedItems.indexOf(null)
+        const firstEmptyIndex = placedItems.indexOf(null);
         
         if (firstEmptyIndex !== -1)
         {
-            const newPlacedItems = [...placedItems]
-            newPlacedItems[firstEmptyIndex] = cardId
-            setPlacedItems(newPlacedItems)
+            const newPlacedItems = [...placedItems];
+            newPlacedItems[firstEmptyIndex] = cardId;
+            setPlacedItems(newPlacedItems);
             
-            const newAvailableItems = availableItems.filter((id) => id !== cardId)
-            setAvailableItems(newAvailableItems)
+            const newAvailableItems = availableItems.filter((id) => id !== cardId);
+            setAvailableItems(newAvailableItems);
             
-            setIsError(false)
-            setIsFinished(false)
+            setIsError(false);
+            setIsFinished(false);
         }
     }
 
     const HandleSlotClick = (cardId, slotIndex) =>
     {
-        if (cardId === null) 
-        {
-            return
-        }
+        if (cardId === null) return;
         
-        const newPlacedItems = [...placedItems]
-        newPlacedItems[slotIndex] = null
-        setPlacedItems(newPlacedItems)
+        const newPlacedItems = [...placedItems];
+        newPlacedItems[slotIndex] = null;
+        setPlacedItems(newPlacedItems);
         
-        const newAvailableItems = [...availableItems, cardId]
-        setAvailableItems(newAvailableItems)
+        const newAvailableItems = [...availableItems, cardId];
+        setAvailableItems(newAvailableItems);
         
-        setIsError(false)
-        setIsFinished(false)
+        setIsError(false);
+        setIsFinished(false);
     }
 
     const HandleSubmitClick = () =>
     {
         if (isFinished)
         {
-            // TODO: proceed to next round here
-            return
+            levelHandler.setNextRound();
+            return;
         }
 
         const isCorrect = placedItems.every((id, index) => id === correctOrder[index])
         
         if (isCorrect)
         {
-            setIsFinished(true)
-            setIsError(false)
+            setIsFinished(true);
+            setIsError(false);
         }
         else
         {
-            setIsError(true)
+            setIsError(true);
             
             setTimeout(() => 
             {
-                setIsError(false)
+                setIsError(false);
             }, 1000)
         }
     }
 
-    let buttonText = "Submit Code"
+    let buttonText = "Submit Code";
     if (isFinished)
-        buttonText = levelHandler.isNextRoundAvailable() ? "Next Round" : "Finished"
+        buttonText = levelHandler.isNextRoundAvailable() ? "Next Round" : "Finished";
 
     return (
         <div className="round-puzzle_wrapper">

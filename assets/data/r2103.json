@@ -10,9 +10,9 @@
     "initial_order":
     [
         2,
-        1,
         0,
-        3
+        3,
+        1
     ],
     "correct_order":
     [

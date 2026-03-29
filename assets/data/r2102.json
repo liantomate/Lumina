@@ -1,18 +1,18 @@
 {
-    "type": "island_02-level_01",
+    "type": "island_02-levels",
     "pieces":
     [
-        "START\nscore = 0",
-        "FOR each answer\n\tscore = score + points\nEND FOR",
-        "IF score in range THEN\n\tdisplay matching title\nEND IF",
+        "START\nREAD userChoice",
+        "IF userChoice == \"A\" THEN\n\tGO to PathA",
+        "ELSE\n\tGO to PathB\nEND IF",
         "END"
     ],
     "initial_order":
     [
+        3,
         2,
         1,
-        0,
-        3
+        0
     ],
     "correct_order":
     [
@@ -21,5 +21,5 @@
         2,
         3
     ],
-    "message": "The program adds up the points from all your answers. After getting the total score, it checks which score range you fall into, then shows the title and description that best match your result."
+    "message": "The program reads the user’s choice and sends them to a different path based on what they picked."
 }

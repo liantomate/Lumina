@@ -1,83 +1,11 @@
 {
-  "type": "cs-sequence",
-
-  "dialogue_level_1_intro": [
-    "Tap four cards in order wise, let logic be your guide.",
-    "When the sequence truly aligns, the hidden code shall rise inside.",
-    "If the order is wrong, wait until all are pressed then the round resets."
-  ],
-
-  "rules_level_1": [
-    "Select the four cards in the correct order.",
-    "Correct sequence reveals the hidden code.",
-    "Wrong sequence resets after all cards are selected."
-  ],
-
-  "elements_level_1_round_1_cards": [
-    "START\nscore = 0",
-    "FOR each answer\nscore = score + points\nEND FOR",
-    "IF score in range THEN\ndisplay matching title\nEND IF",
-    "END"
-  ],
-
-  "feedback_level_1_round_1": [
-    "The program adds up all points.",
-    "It checks the score range.",
-    "It displays the matching title."
-  ],
-
-  "elements_level_1_round_2_cards": [
-    "START\nREAD userChoice",
-    "IF userChoice == 'A' THEN\nGO to PathA",
-    "ELSE\nGO to PathB\nEND IF",
-    "END"
-  ],
-
-  "feedback_level_1_round_2": [
-    "The program reads the user's choice.",
-    "It sends the user to a different path."
-  ],
-
-  "elements_level_1_round_3_cards": [
-    "START\nscore = 0",
-    "FOR each answer\nscore = score + points\nEND FOR",
-    "IF score in range THEN\ndisplay matching title\nEND IF",
-    "END"
-  ],
-
-  "feedback_level_1_round_3": [
-    "The program totals the score.",
-    "It determines the correct result."
-  ],
-
-  "elements_level_1_round_4_cards": [
-    "START",
-    "WHILE taskNotFinished\nPERFORM task",
-    "END WHILE\nDISPLAY 'Task Complete'",
-    "END"
-  ],
-
-  "feedback_level_1_round_4": [
-    "The task repeats until finished."
-  ],
-
-  "elements_level_1_round_5_cards": [
-    "START\nhighest = 0",
-    "FOR each playerScore\nIF playerScore > highest THEN\nhighest = playerScore",
-    "END IF\nEND FOR\nDISPLAY highest",
-    "END"
-  ],
-
-  "feedback_level_1_round_5": [
-    "The program checks all scores.",
-    "It finds and displays the highest score."
-  ],
-
-  "dialogue_level_1_end_game": [
-    "Great job! Let’s move onto the next level!"
-  ],
-
-  "feedback_level_1_achievement": [
-    "Achievement Unlocked: Algorithm Guru"
-  ]
+    "name": "Computer Science Immersion",
+    "type": "game",
+    "rounds_list": [
+        "2101",
+        "2102",
+        "2103",
+        "2104",
+        "2105"
+    ]
 }

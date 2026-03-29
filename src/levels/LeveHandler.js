@@ -9,6 +9,8 @@ class LevelHandler
         this.achievements = [];
         this.setExternalRound = setExternalRound;
         this.externalRound = externalRound;
+
+        console.log("[DEBUG] LevelHandler Round: ", this.externalRound);
     }
 
     setNextRound()

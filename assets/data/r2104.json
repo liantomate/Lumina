@@ -1,0 +1,25 @@
+{
+    "type": "island_02-levels",
+    "pieces":
+    [
+        "START",
+        "WHILE taskNotFinished\n\tPERFORM task\nEND WHILE",
+        "DISPLAY \"Task Complete\"",
+        "END"
+    ],
+    "initial_order":
+    [
+        1,
+        3,
+        0,
+        2
+    ],
+    "correct_order":
+    [
+        0,
+        1,
+        2,
+        3
+    ],
+    "message": "The program keeps doing the task again and again until it is finished."
+}

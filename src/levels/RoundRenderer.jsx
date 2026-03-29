@@ -7,20 +7,21 @@ import CongratulationsRound from "./rounds/CongratulationsRound";
 
 export default function RoundRenderer({ levelHandler })
 {
-    const roundData = levelHandler.getCurrentRoundData();
+    let roundData = undefined;
+    roundData = levelHandler.getCurrentRoundData() || roundData;
+    const roundKey = levelHandler.externalRound;
 
     // there are three (quite badly) categories of rounds
     // multiple choices round
     // multiple selections round
     // literally everything else
-    
+
+    console.log("[Debug, RoundRenderer:19] Current Round: ", roundData);
+    if(roundData === undefined) return <CongratulationsRound key={roundKey} levelHandler={levelHandler} />;
     if(roundData.type === "multiple_choices" || roundData.type === "multiple_selections")
-        return <QuestionnaireRound levelHandler={levelHandler} />;
+        return <QuestionnaireRound key={roundKey} levelHandler={levelHandler} />;
     
-    else if(roundData.type === "island_01-level_03") return <Island01ArticleRound levelHandler={levelHandler} />;
-    else if(roundData.type === "island_02-level_01") return <Island02PuzzleRound levelHandler={levelHandler} />;
-
-    return <CongratulationsRound levelHandler={levelHandler} />;
-
     // below are the "everything else" rounds
+    if(roundData.type === "island_01-level_03") return <Island01ArticleRound key={roundKey} levelHandler={levelHandler} />;
+    if(roundData.type === "island_02-levels") return <Island02PuzzleRound key={roundKey} levelHandler={levelHandler} />;
 }
