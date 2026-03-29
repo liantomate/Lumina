@@ -1,10 +1,14 @@
 .congrats-main-rect {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    gap: 20px; /* space between left and right halves */
-    padding: 10px;
-    box-sizing: border-box;
+   position: fixed;
+   top: 80px;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+   display: flex;
+   flex-direction: row;
+
+   background-color: var(--bg-secondary-dark);
 }
 
 /* Left column */
@@ -12,92 +16,115 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 20px; /* vertical space between boxes */
+    gap: 60px;
+    
+    border-right: 4px solid #011122; /*The one that creates the line in the middle*/
+    padding: 20px;
 }
 
-/* Right column */
 .congrats-right {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 30px;
 }
-
-/* Top small box in right column */
-.congrats-right-top {
-    flex: 0 0 25%; /* small top rectangle */
-    background-color: var(--ui-box-primary-light);
-    border: 4px solid var(--ui-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    box-sizing: border-box;
-}
-
-/* Bottom large box in right column */
-.congrats-right-main {
-    flex: 1; /* fills remaining space */
-    background-color: var(--ui-box-primary-light);
-    border: 4px solid var(--ui-accent);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-/* Individual left achievement boxes */
+/*Left*/
 .congrats-left > .congrats-achievement {
+    width: 100%;
+    max-width: 400px;
+
+    height: auto;
+    min-height: 100px;
+
     background-color: var(--ui-box-primary-light);
     border: 4px solid var(--ui-accent);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+}
+/*RIGHT UP BOX small top*/
+.congrats-right > .congrats-achievement:first-child {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+
+    background-color: var(--ui-box-primary-light);
+    border: 4px solid var(--ui-accent);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+}
+/*Right Bottom Box large*/
+.congrats-right > .congrats-achievement:last-child{
+    width: 100%;
     flex: 1;
+
+    background-color: var(--ui-box-primary-light);
+    border: 4px solid var(--ui-accent);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    min-height: 80px;
-    box-sizing: border-box;
 }
 
-/* Achievement icon */
 .congrats-achievement img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
 }
 
-/* Achievement title */
-.congrats-achievement h1 {
-    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
-    font-size: 1.8rem;
+.congrats-achievement h1{
+    font-family: 'Gamer', 'Lucida Console', monospace;
+    font-size: 2.5rem;
+    line-height: 0.9;
     margin: 0;
     text-align: center;
+    color: var(--text-inverse);
+    text-transform: uppercase;
 }
 
-/* Achievement description */
 .congrats-achievement p {
-    font-family: 'Gamer', 'Lucida Console', 'Courier New', monospace;
-    font-size: 1.5rem;
+    font-family: 'Gamer', 'Lucida Console', monospace;
+    font-size: 1.3rem;
+    line-height: 1.1;
     margin: 5px 0 0 0;
     text-align: center;
+    color: var(--text-inverse);
 }
 
-.congrats-main-rect {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    flex-direction: row;
+@media (max-width: 768px) {
+    .congrats-main-rect {
+        position: relative;
+        top: 0;
+        margin-top: 90px;
+        flex-direction: column;
+        height: auto;
+        bottom: auto;
+    }
 
-    /* full screen minus navbar */
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 90px);
-    margin-top: 90px;
+    .congrats-left {
+        border-right: none;
+        border-bottom: 6px solid #011122;
+    }
 
-    overflow-y: auto; /* scroll if needed */
+    .congrats-right > .congrats-achievement:last-child {
+        min-height: 250px;
+    }
+
+    .congrats-achievement h1 {
+        font-size: 1.8rem;
+    }
+    .congrats-achievement p {
+        font-size: 1rem;
+    }
 }
