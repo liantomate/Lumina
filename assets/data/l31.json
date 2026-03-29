@@ -12,71 +12,200 @@
   "rules_level_1": [
     "Connect all puzzle pieces correctly.",
     "Each piece represents a CpE course.",
-    "Complete the full academic pathway puzzle to proceed."
+    "Complete all sets to finish the puzzle."
   ],
 
   "elements_level_1_round_1_first_year_fundamentals": [
-    "Computer Engineering Orientation",
-    "Programming Logic And Design — Lab",
-    "Discrete Mathematics",
-    "Calculus-Based Physics — Lecture & Lab",
-    "Chemistry For Engineers — Lecture & Lab",
-    "Differential Calculus",
-    "Integral Calculus"
+    {
+      "title": "Computer Engineering Orientation",
+      "description": "Introduces the CpE field, career paths, and core expectations. Helps you understand how hardware and software integrate in real systems."
+    },
+    {
+      "title": "Programming Logic And Design — Lab",
+      "description": "Teaches step-by-step problem solving using algorithms and pseudocode. Builds your foundation for writing clear and correct programs."
+    },
+    {
+      "title": "Discrete Mathematics",
+      "description": "Covers logic, sets, relations, functions, and counting methods. Forms your mathematical basis for algorithms and digital systems."
+    },
+    {
+      "title": "Engineering Physics",
+      "description": "Applies calculus to motion, forces, energy, and electricity. Demonstrates physical principles through experiments."
+    },
+    {
+      "title": "Chemistry For Engineers — Lecture & Lab",
+      "description": "Explains matter, materials, and chemical properties relevant to electronics. Includes lab work on reactions and measurements."
+    },
+    {
+      "title": "Calculus",
+      "description": "Studies rates of change (derivatives) and volume of 3D objects. Helps model motion, signals, and system behavior."
+    },
+    {
+      "title": "Integral Calculus",
+      "description": "Focuses on accumulation and integrals. Used for analyzing signal behavior and physical systems."
+    }
   ],
 
   "elements_level_1_round_2_second_year_circuits": [
-    "Electrical Circuits For CpE — Lecture & Lab",
-    "Electronic Circuits For CpE — Lecture & Lab",
-    "Logic Circuits & Design — Lecture & Lab",
-    "Differential Equations",
-    "Object Oriented Programming — Lab",
-    "Data Structures & Algorithm — Lab",
-    "Computer-Aided Drafting — Lab",
-    "Computer-Aided Drafting & Design — Lab",
-    "Engineering Data Analysis — Lecture & Lab"
+    {
+      "title": "Electrical Circuits For CpE — Lecture & Lab",
+      "description": "Teaches analysis of voltage, current, resistance, and power. Includes building and measuring real circuits."
+    },
+    {
+      "title": "Electronic Circuits For CpE — Lecture & Lab",
+      "description": "Introduces diodes, transistors, and amplifiers. You design and test electronic components."
+    },
+    {
+      "title": "Logic Circuits & Design — Lecture & Lab",
+      "description": "Covers Boolean algebra and digital logic gates. Focuses on designing combinational and sequential circuits."
+    },
+    {
+      "title": "Differential Equations",
+      "description": "Teaches solving equations involving rates of change. Important for modeling dynamic systems."
+    },
+    {
+      "title": "Object Oriented Programming — Lab",
+      "description": "Introduces classes, objects, and modular design. Helps build reusable and structured programs."
+    },
+    {
+      "title": "Data Structures & Algorithm — Lab",
+      "description": "Teaches efficient data storage and processing. Improves problem solving and performance."
+    },
+    {
+      "title": "Computer-Aided Drafting — Lab",
+      "description": "Trains you in technical drawing using software. Develops precision in visualization."
+    },
+    {
+      "title": "Computer-Aided Drafting & Design — Lab",
+      "description": "Extends drafting into full design projects with engineering standards."
+    },
+    {
+      "title": "Engineering Data Analysis — Lecture & Lab",
+      "description": "Applies statistics to interpret engineering data and analyze results."
+    }
   ],
 
   "elements_level_1_round_3_third_year_systems": [
-    "Numerical Methods & Analysis — Lecture & Lab",
-    "Computer Architecture & Organization — Lecture & Lab",
-    "Operating Systems",
-    "Introduction To H.D.L. — Lab",
-    "Microprocessor & Microcontroller Systems & Design — Lecture & Lab",
-    "Embedded Systems — Lecture & Lab",
-    "Fundamentals Of Mixed Signals & Sensors",
-    "Feedback & Control Systems",
-    "Data & Digital Communications",
-    "Data Signal Processing — Lecture & Lab",
-    "Engineering Management",
-    "Engineering Economics",
-    "Technopreneurship",
-    "Basic Occupational Safety & Health",
-    "Methods Of Research (Capstone Design Project 1)",
-    "CpE Elective 1"
+    {
+      "title": "Numerical Methods & Analysis — Lecture & Lab",
+      "description": "Teaches computational techniques for solving complex math problems using programming."
+    },
+    {
+      "title": "Computer Architecture & Organization — Lecture & Lab",
+      "description": "Explains how CPUs, memory, and hardware components work together."
+    },
+    {
+      "title": "Operating Systems",
+      "description": "Covers process management, memory, and file systems."
+    },
+    {
+      "title": "Introduction To H.D.L. — Lab",
+      "description": "Teaches hardware description languages for circuit modeling."
+    },
+    {
+      "title": "Microprocessor & Microcontroller Systems & Design — Lecture & Lab",
+      "description": "Focuses on programming and interfacing microcontrollers."
+    },
+    {
+      "title": "Embedded Systems — Lecture & Lab",
+      "description": "Designs systems combining hardware and software using sensors."
+    },
+    {
+      "title": "Fundamentals Of Mixed Signals & Sensors",
+      "description": "Explains interaction of analog and digital signals."
+    },
+    {
+      "title": "Feedback & Control Systems",
+      "description": "Teaches system stability and automatic control."
+    },
+    {
+      "title": "Data & Digital Communications",
+      "description": "Covers data transmission and networking basics."
+    },
+    {
+      "title": "Data Signal Processing — Lecture & Lab",
+      "description": "Teaches signal analysis and filtering using algorithms."
+    },
+    {
+      "title": "Engineering Management",
+      "description": "Focuses on project planning and team coordination."
+    },
+    {
+      "title": "Engineering Economics",
+      "description": "Applies economic principles to engineering decisions."
+    },
+    {
+      "title": "Technopreneurship",
+      "description": "Encourages innovation and tech-based business creation."
+    },
+    {
+      "title": "Basic Occupational Safety & Health",
+      "description": "Promotes safety practices and hazard prevention."
+    },
+    {
+      "title": "Methods Of Research (Capstone Design Project 1)",
+      "description": "Prepares research planning and proposal writing."
+    },
+    {
+      "title": "CpE Elective 1",
+      "description": "Allows specialization in a chosen CpE topic."
+    }
   ],
 
   "elements_level_1_round_4_fourth_year_internships": [
-    "Computer Networks & Security — Lecture & Lab",
-    "Software Design — Lecture & Lab",
-    "Seminars & Field Trips — Drafting",
-    "Capstone Design Project 2 — Drafting",
-    "Capstone Design Project 3 — Drafting",
-    "CpE Laws & Professional Practice",
-    "Emerging Technologies In CpE",
-    "CpE Elective 2",
-    "CpE Elective 3",
-    "On-The-Job Training 1",
-    "On-The-Job Training 2"
+    {
+      "title": "Computer Networks & Security — Lecture & Lab",
+      "description": "Teaches networking and security systems configuration."
+    },
+    {
+      "title": "Software Design — Lecture & Lab",
+      "description": "Focuses on software architecture and development."
+    },
+    {
+      "title": "Seminars & Field Trips — Drafting",
+      "description": "Provides industry exposure and reflections."
+    },
+    {
+      "title": "Capstone Design Project 2 — Drafting",
+      "description": "Continues development of your engineering project."
+    },
+    {
+      "title": "Capstone Design Project 3 — Drafting",
+      "description": "Finalizes and presents your completed project."
+    },
+    {
+      "title": "CpE Laws & Professional Practice",
+      "description": "Teaches ethics and responsibilities of engineers."
+    },
+    {
+      "title": "Emerging Technologies In CpE",
+      "description": "Explores AI, IoT, and modern technologies."
+    },
+    {
+      "title": "CpE Elective 2",
+      "description": "Expands knowledge in a specialized field."
+    },
+    {
+      "title": "CpE Elective 3",
+      "description": "Further strengthens specialization."
+    },
+    {
+      "title": "On-The-Job Training 1",
+      "description": "Provides real-world work experience."
+    },
+    {
+      "title": "On-The-Job Training 2",
+      "description": "Extends industry immersion and skills."
+    }
   ],
 
   "feedback_level_1_after_game": [
     "CpE is a 4-year degree program.",
-    "The puzzle shows the subjects you will go through if you choose CpE."
+    "The puzzle shows all subjects you will encounter in CpE."
   ],
 
   "dialogue_level_1_end_game": [
-    "It seems that this place showed you all of the courses and subjects of CpE.",
-    "Hmm… I wonder what the next island is going to be?"
+    "It seems that this place showed you all of the courses of CpE.",
+    "I wonder what the next island is going to be?"
   ]
 }
