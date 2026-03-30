@@ -32,6 +32,11 @@
     --neutral-light-dark: #F8F9FA;
     --neutral-dark-dark: #111111;
 
+    /*Close Button*/
+    --close-button: #ff0000;
+    --close-button-border: #910202;
+    --close-button-hover: #b90000;
+
     /*Dynamic sky gradient: Night Time*/
     --sky-1: #000b18;
     --sky-2: #01182d;
