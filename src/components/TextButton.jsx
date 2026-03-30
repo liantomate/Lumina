@@ -1,9 +1,6 @@
 import "../../styles/Component_TextButton.css";
 
-import { useState } from "react";
-
 import useSoundPlayer from "../hooks/UseSoundPlayerHook";
-import Sound from "./Sound";
 
 export default function TextButton({ text, callback, toggled=false }) {
     const sfxs = [
