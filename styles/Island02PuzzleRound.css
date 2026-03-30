@@ -96,7 +96,7 @@
 
 .round-submit_button:hover
 {
-    background-color: var(--ui-box-primary-dark);
+    background-color: var(--ui-box-primary-hover);
 }
 
 .round-submit_button:active
