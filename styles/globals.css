@@ -32,10 +32,14 @@
     --neutral-light-dark: #F8F9FA;
     --neutral-dark-dark: #111111;
 
-    /*Close Button*/
+    /*Button*/
     --close-button: #ff0000;
     --close-button-border: #910202;
     --close-button-hover: #b90000;
+
+    --theme-btn-bg: #2563EB;
+    --theme-btn-border: #1E3A8A;
+    --theme-btn-hover: #3B82F6;
 
     /*Dynamic sky gradient: Night Time*/
     --sky-1: #000b18;
@@ -56,6 +60,10 @@
         --text-main: #111111;
         --text-inverse: #FFFFFF;
 
+        --theme-btn-bg: #4A90E2;
+        --theme-btn-border: #0a71d1;
+        --theme-btn-hover: #6CB2EB;
+
         --sky-1: #4287f5;
         --sky-2: #73a9ff;
         --sky-3: #8a9cba;
@@ -73,6 +81,10 @@
     --text-main: #1a1a1a;
     --text-inverse: #111111;
 
+    --theme-btn-bg: #4A90E2;
+    --theme-btn-border: #0a71d1;
+    --theme-btn-hover: #6CB2EB;
+
     --sky-1: #4287f5;
     --sky-2: #73a9ff;
     --sky-3: #8a9cba;
@@ -88,6 +100,10 @@
     --ui-box-primary-dark: #DAB900;
     --text-main: #FFFFFF;
     --text-inverse: #111111;
+
+    --theme-btn-bg: #2563EB;
+    --theme-btn-border: #1E3A8A;
+    --theme-btn-hover: #3B82F6;
 
     --sky-1: #000b18;
     --sky-2: #01182d;

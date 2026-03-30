@@ -45,6 +45,19 @@
     pointer-events: none;
 }
 
+/* --- THEME TOGGLE BUTTON CUSTOM COLORS --- */
+.component-sidebar-theme_toggle button 
+{
+    background-color: var(--theme-btn-bg) !important;
+    border-color: var(--theme-btn-border) !important;
+    color: #FFFFFF !important; /* Kept pure white so it always pops */
+}
+
+.component-sidebar-theme_toggle button:hover 
+{
+    background-color: var(--theme-btn-hover) !important;
+}
+
 @keyframes bob {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(10px); }
