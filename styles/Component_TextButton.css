@@ -19,7 +19,7 @@
 }
 
 .component-text_button:hover {
-    background-color: var(--ui-box-primary-dark);
+    background-color: var(--ui-box-primary-hover);
     transform: scale(0.99);
 }
 
@@ -29,13 +29,13 @@
 }
 
 .component-text_button-toggled {
-    background-color: #38a10b;
-    border-color: var(--ui-landscape-dark);
+    background-color: var(--select-color);
+    border-color: var(--select-color-border);
     color: var(--text-main);
     transform: scale(0.96);
 }
 
 .component-text_button-toggled:hover {
-    background-color: #44e300;
+    background-color: var(--select-color-hover);
     transform: scale(0.96);
 }

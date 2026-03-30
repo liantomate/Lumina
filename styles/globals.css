@@ -5,19 +5,29 @@
     /*Typography*/
     --text-main: #FFFFFF;
     --text-inverse: #111111;
+
     /*Backgrounds*/
-    --bg-primary-dark: #01182D;
-    --bg-secondary-dark: #000A14;
-    --bg-primary-light: #63c3ff;
-    --bg-secondary-light: #f8f9fa;
+    --bg-primary-dark: #07162C;
+    --bg-secondary-dark: #030A14; /*Navbar background color*/
+    --bg-primary-light: #80C4E9;
+    --bg-secondary-light: #F0F4F8;
+    
     /*UI-elements*/
-    --ui-box-primary-dark: #DAB900;
-    --ui-box-primary-light: #FFD700;
-    --ui-accent: #9C3E04;
-    /*Assets*/
-    --ui-progress: #44E300;
-    --ui-landscape-dark: #153A06;
+    --ui-box-primary-hover: #fcb901; /*Hover color for the --ui-box-primary-light*/ 
+    --ui-box-primary-light: #FFD700; /*Main Color of all text box(the bright one)*/
+    --ui-accent: #9C3E04;   /*The border color of --ui-box-primary-light*/
+
+    /*Progress Bar*/
+    --ui-progress: #44E300; /*The main fill inside the progress bar*/
+    --ui-landscape-dark: #153A06; /*The border color of --ui-progress*/
+
+    /*Selection-Multi*/
+    --select-color: #38a10b; /*The color of the box for the multiple selection*/
+    --select-color-border: #153a06; /*border color for selected items*/
+    --select-color-hover: #44E300; /*Hover color for the selected items*/
+    
     --ui-landscape-light: #3B8C18;
+    
     /*Neutral*/
     --neutral-light-dark: #F8F9FA;
     --neutral-dark-dark: #111111;
@@ -34,10 +44,10 @@
 {
     :root
     {
-        --bg-primary-dark: var(--bg-primary-light);
-        --bg-secondary-dark: var(--bg-secondary-light);
-        --ui-landsape-dark: var(--ui-landscape-light);
-        --ui-box-primary-dark: var(--ui-box-primary-light);
+        --bg-primary-dark: #a5d8ff;
+        --bg-secondary-dark: #ffffff;
+        --ui-landsape-dark: #4caf50;
+        --ui-box-primary-dark: #f2c94c;
         --text-main: #111111;
         --text-inverse: #FFFFFF;
 
@@ -51,12 +61,12 @@
 
 [data-theme="light"] 
 {
-    --bg-primary-dark: var(--bg-primary-light);
-    --bg-secondary-dark: var(--bg-secondary-light);
-    --ui-landsape-dark: var(--ui-landscape-light);
-    --ui-box-primary-dark: var(--ui-box-primary-light);
-    --text-main: #111111;
-    --text-inverse: #FFFFFF;
+    --bg-primary-dark: #a5d8ff;
+    --bg-secondary-dark: #ffffff;
+    --ui-landsape-dark: #4caf50;
+    --ui-box-primary-dark: #f2c94c;
+    --text-main: #1a1a1a;
+    --text-inverse: #111111;
 
     --sky-1: #4287f5;
     --sky-2: #73a9ff;
