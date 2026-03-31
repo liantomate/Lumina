@@ -16,7 +16,6 @@ export default function RoundRenderer({ levelHandler })
     // multiple selections round
     // literally everything else
 
-    console.log("[Debug, RoundRenderer:19] Current Round: ", roundData);
     if(roundData === undefined) return <CongratulationsRound key={roundKey} levelHandler={levelHandler} />;
     if(roundData.type === "multiple_choices" || roundData.type === "multiple_selections")
         return <QuestionnaireRound key={roundKey} levelHandler={levelHandler} />;

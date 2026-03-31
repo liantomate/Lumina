@@ -10,15 +10,25 @@ class UserData
         this.obtainedAchievements = [];
     }
 
+
     incrementLevel() 
     {
+        if (this._incrementing) return;
+        this._incrementing = true;
+
         if (!this.isNextLevelAvailable()) 
         {
             this.currentLevel = 1;
             this.currentIsland++;
-            return;
+        } 
+        else 
+        {
+            this.currentLevel++;
         }
-        this.currentLevel++;
+
+        setTimeout(() => {
+            this._incrementing = false;
+        }, 0);
     }
 
     getCurrentLevelData()
