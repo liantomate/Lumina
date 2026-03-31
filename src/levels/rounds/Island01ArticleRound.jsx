@@ -1,5 +1,8 @@
 import "../../../styles/Island01ArticleRound.css";
+
 import global_UserData from "../../core/UserData";
+import global_StateManager from "../../states/StateManager";
+import { STATE_TYPES } from "../../states/StateTypes";
 
 function GetScoreIndex(score, options)
 {
@@ -53,10 +56,15 @@ export default function Island01ArticleRound({ levelHandler, onMenuReturn })
                         onClick={() =>
                         {
                             global_UserData.incrementLevel();
+                            global_UserData.resetIsland01Score();
 
                             if (onMenuReturn)
                             {
                                 onMenuReturn();
+                            }
+                            else
+                            {
+                                global_StateManager.setState(STATE_TYPES.MENU);
                             }
                         }}
                     >
