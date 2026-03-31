@@ -1,52 +1,65 @@
+import { useRef } from "react";
+
 import "../../styles/MenuState.css";
-import { useEffect } from "react";
 
-import NavigationBar from "../components/menu_components/MenuNavigationBar";
-import SideBar from "../components/menu_components/MenuSideBar";
-
+import MenuNavigationBar from "../components/menu_components/MenuNavigationBar";
+import MenuSideBar from "../components/menu_components/MenuSideBar";
 import IslandButton from "../components/menu_components/IslandButton";
+import MenuParallaxLayer from "../components/menu_components/MenuParallaxLayer";
 
-import global_UserData from "../core/UserData";
-import LEVEL_DATA from "../core/LevelData";
+import globalUserData from "../core/UserData";
+import levelData from "../core/LevelData";
 
-const mouseMultiplier = 30;
+export default function MenuState()
+{
+    const scrollContainerRef = useRef(null);
 
-export default function MenuState() {
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * mouseMultiplier;
-            const y = (e.clientY / window.innerHeight - 0.5) * mouseMultiplier;
-        };
-
-        window.addEventListener("mousemove", handleMouseMove);
-
-        return () => {
-            window.removeEventListener("mousemove", handleMouseMove);
-        };
-    }, []);
+    const progressValue = globalUserData.currentLevel > 0
+        ? (globalUserData.currentLevel / Object.keys(levelData).length) * 100
+        : 0;
 
     return (
         <>
-            <SideBar className="freeze" />
+            <MenuSideBar className="freeze" />
 
-            <NavigationBar
+            <MenuNavigationBar
                 className="freeze"
                 logoPath={"../../assets/images/logo.png"}
                 title={"Lumina"}
-                progress={
-                    global_UserData.currentLevel > 0
-                        ? (global_UserData.currentLevel / Object.keys(LEVEL_DATA).length) * 100
-                        : 0
-                }
+                progress={progressValue}
             />
 
-            <div className="menu-scroll_container">
-                <div className="menu-background-gradient"></div>
+            <div
+                ref={scrollContainerRef}
+                className="menu-scroll_container"
+            >
+                <div className="menu-background_gradient"></div>
+
+                <MenuParallaxLayer
+                    scrollContainerRef={scrollContainerRef}
+                    mouseStrength={8}
+                    scrollStrength={0.015}
+                    scale={1}
+                />
 
                 <div className="menu-island_container">
-                    <IslandButton imageSrc={"../../assets/images/island_01.png"} yPos={20}  flex={1} />
-                    <IslandButton imageSrc={"../../assets/images/island_02.png"} yPos={120} flex={1} />
-                    <IslandButton imageSrc={"../../assets/images/island_03.png"} yPos={220} flex={2} />
+                    <IslandButton
+                        imageSrc={"../../assets/images/island_0111.png"}
+                        yPos={50}
+                        scale={150}
+                    />
+
+                    <IslandButton
+                        imageSrc={"../../assets/images/island_0222.png"}
+                        yPos={220}
+                        scale={150}
+                    />
+
+                    <IslandButton
+                        imageSrc={"../../assets/images/island_0333.png"}
+                        yPos={320}
+                        scale={150}
+                    />
                 </div>
             </div>
         </>

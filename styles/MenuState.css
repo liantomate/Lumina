@@ -1,4 +1,5 @@
-.menu-scroll_container {
+.menu-scroll_container
+{
     position: fixed;
     top: 0;
     left: 0;
@@ -8,76 +9,168 @@
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    isolation: isolate;
 }
 
-.menu-scroll_container::-webkit-scrollbar {
+.menu-scroll_container::-webkit-scrollbar
+{
     display: none;
 }
 
-.menu-background-gradient {
+.menu-background_gradient
+{
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 700vh;
-   
-    background: linear-gradient(180deg,
-      var(--sky-1) 0%,
-      var(--sky-2) 25%,
-      var(--sky-3) 50%,
-      var(--sky-4) 85%);
-   
+    height: 500vh;
+    background: linear-gradient(
+        180deg,
+        var(--sky-1) 0%,
+        var(--sky-2) 15%,
+        var(--sky-3) 40%,
+        var(--sky-4) 65%,
+        var(--sky-5) 90%
+    );
     z-index: 0;
 }
 
-.menu-island_container {
+.menu-parallax_layer
+{
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.menu-parallax_image
+{
     position: absolute;
-    top: 90px;
-    left: 40%;
+    top: 50%;
+    left: 50%;
+    width: 118%;
+    height: 118%;
+    object-fit: cover;
+    object-position: center center;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+    transform-origin: center;
+    will-change: transform;
+    pointer-events: none;
+    user-select: none;
+}
+
+.menu-parallax_image-light
+{
+    display: none;
+}
+
+.menu-parallax_image-dark
+{
+    display: block;
+}
+
+[data-theme="light"] .menu-parallax_image-light
+{
+    display: block;
+}
+
+[data-theme="light"] .menu-parallax_image-dark
+{
+    display: none;
+}
+
+[data-theme="dark"] .menu-parallax_image-light
+{
+    display: none;
+}
+
+[data-theme="dark"] .menu-parallax_image-dark
+{
+    display: block;
+}
+
+@media (max-width: 1024px)
+{
+    .menu-parallax_image
+    {
+        width: 126%;
+        height: 126%;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .menu-parallax_image
+    {
+        width: 138%;
+        height: 138%;
+    }
+}
+.menu-island_container
+{
+    position: absolute;
+    top: 0;
+    left: 45em;
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     z-index: 2;
     pointer-events: none;
 }
 
-/* --- THEME TOGGLE BUTTON CUSTOM COLORS --- */
-.component-sidebar-theme_toggle button 
+.component-sidebar-theme_toggle button
 {
     background-color: var(--theme-btn-bg) !important;
     border-color: var(--theme-btn-border) !important;
-    color: #FFFFFF !important; /* Kept pure white so it always pops */
+    color: #FFFFFF !important;
 }
 
-.component-sidebar-theme_toggle button:hover 
+.component-sidebar-theme_toggle button:hover
 {
     background-color: var(--theme-btn-hover) !important;
 }
 
 .component-sidebar,
 .component-navigation_bar,
-.freeze {
+.freeze
+{
     z-index: 100 !important;
 }
 
-@media (max-width: 768px) {
-    .menu-island_container {
-        left: 0 !important;
-        width: 100% !important;
-        height: auto !important;
+@media (max-width: 1024px)
+{
+    .menu-island_container
+    {
+        left: 20em;
+    }
+}
 
+@media (max-width: 768px)
+{
+    .menu-scroll_container
+    {
+        scroll-snap-type: y mandatory;
+        scroll-padding-top: 0;
+    }
+
+    .menu-parallax_image
+    {
+        width: 108%;
+        height: 108%;
+    }
+
+    .menu-island_container
+    {
+        left: 0;
+        width: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start !important;
+        justify-content: flex-start;
         align-items: center;
-
         z-index: 2;
     }
 
-    .menu-scroll_container {
-        scroll-snap-type: y mandatory;
-    }
 }
