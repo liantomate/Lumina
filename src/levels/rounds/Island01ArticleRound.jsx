@@ -1,12 +1,10 @@
 import "../../../styles/Island01ArticleRound.css";
 import { useState } from "react";
-
 import global_UserData from "../../core/UserData";
 
 function GetScoreIndex(score, options)
 {
     const fallbackScore = score || 0;
-
 
     if (!options || !Array.isArray(options) || options.length === 0) return 0;
 
@@ -34,7 +32,6 @@ export default function Island01ArticleRound({ levelHandler })
     const headers = roundData?.headers || ["Loading Data..."];
     const contents = roundData?.contents || ["Please wait while the results load."];
 
-
     let userScore = 0;
     try 
     {
@@ -51,6 +48,18 @@ export default function Island01ArticleRound({ levelHandler })
     const initialIndex = GetScoreIndex(userScore, options);
     const [ activeButton, setActiveButton ] = useState(initialIndex);
 
+    // --- NEW: The function to handle moving to the next round! ---
+    const handleNextClick = () => 
+    {
+        // Replace '.completeRound()' with whatever your LevelHandler uses to advance!
+        // It might be .nextRound(), .advance(), or something similar.
+        if (levelHandler && levelHandler.completeRound) {
+            levelHandler.completeRound();
+        } else {
+            console.log("Next button clicked! Check your LevelHandler for the right advance function.");
+        }
+    };
+
     return (
         <div className="round-island01_article">
             <div className="round-island01_article-buttons">
@@ -64,6 +73,7 @@ export default function Island01ArticleRound({ levelHandler })
                     </button>
                 ))}
             </div>
+            
             <div className="round-island01_article-panel">
                 <h2 className="round-island01_article-header">
                     {headers[activeButton]}
@@ -72,6 +82,17 @@ export default function Island01ArticleRound({ levelHandler })
                     {contents[activeButton]}
                 </p>
             </div>
+
+            {/* --- NEW: The Next Button Container --- */}
+            <div className="round-island01_article-footer">
+                <button 
+                    className="component-text_button" 
+                    onClick={handleNextClick}
+                >
+                    NEXT
+                </button>
+            </div>
+            
         </div>
     );
 }

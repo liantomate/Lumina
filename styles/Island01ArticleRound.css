@@ -86,3 +86,10 @@
     background-color: var(--neutral-light-dark); 
     color: var(--bg-secondary-dark);
 }
+
+.round-island01_article-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
