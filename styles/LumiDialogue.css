@@ -1,19 +1,107 @@
-.component-lumi_dialogue_portrait {
-    width: 100px;
-    height: 100px;
-    background-size: contain; /* Ensures the whole face fits in the box */
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 3px solid var(--ui-landscape-dark, #ffcc00);
-    border-radius: 8px; /* Optional: rounds the portrait box slightly */
-    background-color: var(--bg-secondary-dark, #002244); 
-    flex-shrink: 0;
+/* Portrait Emotions - Keep these as they are */
+.emotion-mystical { background-image: url('/assets/images/lumi-mystical.png'); }
+.emotion-excited { background-image: url('/assets/images/lumi-excited.png'); }
+.emotion-happy { background-image: url('/assets/images/lumi-happy.png'); }
+.emotion-thinking { background-image: url('/assets/images/lumi-thinking.png'); }
+.emotion-explaining { background-image: url('/assets/images/lumi-explaining.png'); }
+.emotion-asking { background-image: url('/assets/images/lumi-asking.png'); }
+
+.component-lumi_dialogue_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    padding-bottom: 40px;
+    z-index: 9999; 
+    cursor: pointer;
 }
 
-/* Swap the image based on the current JSON emotion */
-.component-lumi_dialogue_portrait.emotion-happy { background-image: url('/assets/lumi-happy.png'); }
-.component-lumi_dialogue_portrait.emotion-excited { background-image: url('/assets/lumi-excited.png'); }
-.component-lumi_dialogue_portrait.emotion-thinking { background-image: url('/assets/lumi-thinking.png'); }
-.component-lumi_dialogue_portrait.emotion-explaining { background-image: url('/assets/lumi-explaining.png'); }
-.component-lumi_dialogue_portrait.emotion-mystical { background-image: url('/assets/lumi-mystical.png'); }
-.component-lumi_dialogue_portrait.emotion-asking { background-image: url('/assets/lumi-asking.png'); }
+.component-lumi_dialogue_box {
+    width: 95%; 
+    max-width: 1000px; 
+    min-height: 180px; 
+    
+    background-color: var(--bg-primary-dark);
+    border: 4px solid var(--ui-box-primary-light);
+    color: var(--text-main);
+    
+    border-radius: 12px;
+    padding: 30px; 
+    display: flex;
+    gap: 30px;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.component-lumi_dialogue_portrait {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    
+    border: 4px solid var(--text-main);
+    background-color: var(--bg-secondary-dark);
+    
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.component-lumi_dialogue_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.component-lumi_dialogue_name {
+    /* Uses the Gold/Yellow UI color */
+    color: var(--ui-box-primary-light);
+    font-family: 'Gamer', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem); 
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.component-lumi_dialogue_text {
+    color: var(--text-main);
+    font-family: 'VT323', monospace;
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem); 
+    line-height: 1.2;
+    margin: 0;
+}
+
+.component-lumi_dialogue_prompt {
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem; 
+    /* Subtler version of the main text color */
+    color: var(--text-main);
+    opacity: 0.6;
+    margin-top: 15px;
+    align-self: flex-end;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+    100% { opacity: 0.8; }
+}
+
+@media (max-width: 480px) {
+    .component-lumi_dialogue_box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .component-lumi_dialogue_portrait {
+        width: 100px;
+        height: 100px;
+    }
+}
