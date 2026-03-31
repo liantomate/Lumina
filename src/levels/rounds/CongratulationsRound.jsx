@@ -7,9 +7,11 @@ import "../../../styles/CongratulationsRound.css";
 export default function CongratulationsRound({ levelHandler, onMenuReturn, title = "Level Complete!", subtitle = "Achievements Unlocked" }) 
 {
     const [achievements, setAchievements] = useState([]);
+    useEffect(() => {global_UserData.incrementLevel()}, []);
 
     useEffect(() => 
     {
+
         // SAFEGUARD: Prevent crash if the parent hasn't passed the handler yet
         if (!levelHandler) 
         {

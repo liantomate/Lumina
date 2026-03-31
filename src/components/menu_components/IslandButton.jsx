@@ -13,6 +13,8 @@ import { SOUND_EVENTS, SoundRequestEvent } from "../../utils/SoundEvent";
 export default function IslandButton(
 {
     imageSrc,
+    islandID,
+    setActivePanel,
     foregroundSrc = "",
     yPos,
     scale = 100,
@@ -22,10 +24,7 @@ export default function IslandButton(
     const onButtonClick = () =>
     {
         eventEmit(SOUND_EVENTS.SoundRequestEvent, new SoundRequestEvent(SOUND_TYPES.ISLAND_CLICKED));
-        global_StateManager.setState(
-            STATE_TYPES.LEVEL,
-            LEVEL_DATA[`${global_UserData.currentIsland}${global_UserData.currentLevel}`]
-        );
+        setActivePanel(islandID);
     };
 
     return (

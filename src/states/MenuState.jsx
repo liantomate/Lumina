@@ -20,7 +20,6 @@ export default function MenuState()
     const progressValue = globalUserData.currentLevel > 0
         ? (globalUserData.currentLevel / Object.keys(levelData).length) * 100
         : 0;
-
     return (
         <>
             <MenuSideBar className="freeze" activePanel={activePanel} setActivePanel={setActivePanel} />
@@ -48,6 +47,8 @@ export default function MenuState()
                 <div className="menu-island_container">
                     <IslandButton
                         imageSrc={"../../assets/images/island_0111.png"}
+                        islandID={1}
+                        setActivePanel={setActivePanel}
                         foregroundSrc={"../../assets/images/foreground.png"}
                         yPos={50}
                         scale={150}
@@ -55,6 +56,8 @@ export default function MenuState()
 
                     <IslandButton
                         imageSrc={"../../assets/images/island_0222.png"}
+                        islandID={2}
+                        setActivePanel={setActivePanel}
                         foregroundSrc={"../../assets/images/foreground.png"}
                         yPos={220}
                         scale={150}
@@ -62,13 +65,19 @@ export default function MenuState()
 
                     <IslandButton
                         imageSrc={"../../assets/images/island_0333.png"}
+                        islandID={3}
+                        setActivePanel={setActivePanel}
                         foregroundSrc={"../../assets/images/foreground.png"}
                         yPos={320}
                         scale={150}
                     />
                 </div>
 
-                <IslandPopup isActive={activePanel === "island"} setActive={setActivePanel}></IslandPopup>
+                <IslandPopup isActive={activePanel !== null && 
+                                        activePanel !== "achievements" &&
+                                        activePanel !== "settings" &&
+                                        activePanel !== "about us"}
+                setActive={setActivePanel} targetIsland={Number(activePanel)}></IslandPopup>
             </div>
         </>
     );
