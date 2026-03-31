@@ -6,20 +6,17 @@ import { STATE_TYPES } from "../../states/StateTypes";
 import LEVEL_DATA from "../../core/LevelData";
 import global_UserData from "../../core/UserData";
 
-import useSoundPlayer from "../../hooks/UseSoundPlayerHook";
+import { eventEmit } from "../../events/EventBus";
 import SOUND_TYPES from "../../utils/SoundTypes";
+import { SOUND_EVENTS, SoundRequestEvent } from "../../utils/SoundEvent";
 
 export default function IslandButton({ imageSrc, yPos, scale=100, flex=1 }) {
-    const [ playSFX ] = useSoundPlayer(SOUND_TYPES.ISLAND_CLICKED);
-
     const onButtonClick = () => {
-        playSFX();
-        setTimeout(() => {
-            global_StateManager.setState(
-                        STATE_TYPES.LEVEL,
-                        LEVEL_DATA[`${global_UserData.currentIsland}${global_UserData.currentLevel}`]
-                    );
-        }, 1000);
+        eventEmit(SOUND_EVENTS.SoundRequestEvent, new SoundRequestEvent(SOUND_TYPES.ISLAND_CLICKED));
+        global_StateManager.setState(
+                    STATE_TYPES.LEVEL,
+                    LEVEL_DATA[`${global_UserData.currentIsland}${global_UserData.currentLevel}`]
+                );
     };
 
     return (

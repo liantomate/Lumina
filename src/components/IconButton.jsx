@@ -1,14 +1,12 @@
 import "../../styles/Component_IconButton.css";
 
-import useSoundPlayer from "../hooks/UseSoundPlayerHook";
 import SOUND_TYPES from "../utils/SoundTypes";
+import { SOUND_EVENTS, SoundRequestEvent } from "../utils/SoundEvent";
+import { eventEmit } from "../events/EventBus";
 
 export default function IconButton({ imagePath, callback }) {
-    const [ playSFX ] = useSoundPlayer(SOUND_TYPES.EXIT_CLICKED);
-
     const onButtonClick = () => {
-        console.log("this should play");
-        playSFX();
+        eventEmit(SOUND_EVENTS.SoundRequestEvent, new SoundRequestEvent(SOUND_TYPES.EXIT_CLICKED));
         callback();
     };
 
