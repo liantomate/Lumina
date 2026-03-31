@@ -1,0 +1,19 @@
+.component-lumi_dialogue_portrait {
+    width: 100px;
+    height: 100px;
+    background-size: contain; /* Ensures the whole face fits in the box */
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid var(--ui-landscape-dark, #ffcc00);
+    border-radius: 8px; /* Optional: rounds the portrait box slightly */
+    background-color: var(--bg-secondary-dark, #002244); 
+    flex-shrink: 0;
+}
+
+/* Swap the image based on the current JSON emotion */
+.component-lumi_dialogue_portrait.emotion-happy { background-image: url('/assets/lumi-happy.png'); }
+.component-lumi_dialogue_portrait.emotion-excited { background-image: url('/assets/lumi-excited.png'); }
+.component-lumi_dialogue_portrait.emotion-thinking { background-image: url('/assets/lumi-thinking.png'); }
+.component-lumi_dialogue_portrait.emotion-explaining { background-image: url('/assets/lumi-explaining.png'); }
+.component-lumi_dialogue_portrait.emotion-mystical { background-image: url('/assets/lumi-mystical.png'); }
+.component-lumi_dialogue_portrait.emotion-asking { background-image: url('/assets/lumi-asking.png'); }
