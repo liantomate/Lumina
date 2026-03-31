@@ -1,0 +1,28 @@
+.component-island_popup-container
+{
+    display: relative;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.component-island_popup-container h1
+{
+    font-size: 6em;
+    color: red;
+}
+
+.component-island_popup-data
+{
+    position: absolute;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+    bottom: 2em;
+}
+
+.component-island_popup-data h3
+{
+    font-size: 3em;
+}

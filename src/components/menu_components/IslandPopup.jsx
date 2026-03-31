@@ -24,12 +24,16 @@ export default function IslandPopup({ isActive = false, setActive = (val) => {},
     if(userCurrentIsland < targetIsland)
     {
         progress = 0;
-        return (
+            return (
         <PopupPanel className="component-island_popup" isActive={isActive} setActive={setActive}>
-            <h1>Island #{targetIsland}</h1>
-            <h1>Level 0/{ISLAND_DATA[targetIsland].length}</h1>
-            <ProgressBar value={progress}/>
-            <h3>Finish the previous islands to proceed :3</h3>
+            <div className="component-island_popup-container">
+                <h1>Island #{targetIsland}</h1>
+                <h1>Level 0/{ISLAND_DATA[targetIsland].length}</h1>
+                <div className="component-island_popup-data">
+                    <ProgressBar value={progress}/>
+                    <h3>Finish the previous islands to proceed :3</h3>
+                </div>
+            </div>
         </PopupPanel>);
     }
     else if(userCurrentIsland > targetIsland)
@@ -37,25 +41,33 @@ export default function IslandPopup({ isActive = false, setActive = (val) => {},
         progress = 1;
         return (
         <PopupPanel className="component-island_popup" isActive={isActive} setActive={setActive}>
-            <h1>Island #{targetIsland}</h1>
-            <h1>Level {ISLAND_DATA[targetIsland].length}/{ISLAND_DATA[targetIsland].length}</h1>
-            <ProgressBar value={progress}/>
-            <h3>Island already explored! Go Beyond!</h3>
+            <div className="component-island_popup-container">
+                <h1>Island #{targetIsland}</h1>
+                <h1>Level {ISLAND_DATA[targetIsland].length}/{ISLAND_DATA[targetIsland].length}</h1>
+                <div className="component-island_popup-data">
+                    <ProgressBar value={progress}/>
+                    <h3>Island already explored! Go Beyond!</h3>
+                </div>
+            </div>
         </PopupPanel>);
     }
 
-    return (
+        return (
     <PopupPanel className="component-island_popup" isActive={isActive} setActive={setActive}>
-        <h1>Island #{targetIsland}</h1>
-        <h1>Level {userCurrentLevel}/{ISLAND_DATA[userCurrentIsland].length}</h1>
-        <ProgressBar value={progress}/>
-        <TextButton text={"Explore Island"} callback={() =>
-        {
-            global_StateManager.setState(
-                STATE_TYPES.LEVEL,
-                LEVEL_DATA[ISLAND_DATA[targetIsland][userCurrentLevel - 1]]
-            );
-            setActive(null);
-        }}></TextButton>
+        <div className="component-island_popup-container">
+            <h1>Island #{targetIsland}</h1>
+            <h1>Level {userCurrentLevel}/{ISLAND_DATA[userCurrentIsland].length}</h1>
+            <div className="component-island_popup-data">
+                <ProgressBar value={progress}/>
+                <TextButton text={"Explore Island"} callback={() =>
+                {
+                    global_StateManager.setState(
+                        STATE_TYPES.LEVEL,
+                        LEVEL_DATA[ISLAND_DATA[targetIsland][userCurrentLevel - 1]]
+                    );
+                    setActive(null);
+                }}></TextButton>
+            </div>
+        </div>
     </PopupPanel>);
 }
