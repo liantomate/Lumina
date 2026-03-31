@@ -1,5 +1,7 @@
 import "../styles/App.css"
 
+import "./utils/SoundManager";
+
 import useAppNavigationHook from "./hooks/AppNavigationHook";
 import StateRenderer from "./components/StateRenderer"
 

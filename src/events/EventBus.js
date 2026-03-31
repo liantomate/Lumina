@@ -4,6 +4,8 @@ const _listeners = {};   // Event-Listener pairing
 export function eventEmit(event, dataBody)
 {
     (_listeners[event] || []).forEach(listener => {
+        console.log(event);
+        console.log(dataBody);
         listener(dataBody);
     });
 }
