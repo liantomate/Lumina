@@ -14,18 +14,17 @@ export default function QuestionnaireRound({ levelHandler })
     if (roundData.type === "multiple_choices")
     {
         return (
-            <div className={"round-questionnaire-multiple_choices"}>
+            <div className="round-questionnaire-multiple_choices">
                 <TextBox className="round-questionnaire-question" text={roundData.question} />
-                <div className={"round-questionnaire-multiple_choices-options"}>
+                <div className="round-questionnaire-multiple_choices-options">
                     {roundData.options.map((choice, index) => (
                         <TextButton
                             key={index}
                             text={choice}
                             callback={() =>
                             {
-                                levelHandler.setNextRound();
                                 levelHandler.pushData(index);
-                                global_UserData.data["island_01-total_points"] += roundData.points[index] || 0;
+                                global_UserData.addIsland01Score(roundData.points[index] || 0);
                             }}
                         />
                     ))}
@@ -34,21 +33,25 @@ export default function QuestionnaireRound({ levelHandler })
         );
     }
 
-    const [toggledButtons, setToggledButtons] = useState([0, 0, 0, 0]);
+    const [ toggledButtons, setToggledButtons ] = useState(
+        roundData.options.map(() => 0)
+    );
 
-    const points =
-        toggledButtons[0] * roundData.points[0] +
-        toggledButtons[1] * roundData.points[1] +
-        toggledButtons[2] * roundData.points[2] +
-        toggledButtons[3] * roundData.points[3];
+    const points = toggledButtons.reduce((total, value, index) =>
+    {
+        return total + (value * (roundData.points?.[index] || 0));
+    }, 0);
 
-    const selectedCount = toggledButtons.reduce((total, value) => total + value, 0);
+    const selectedCount = toggledButtons.reduce((total, value) =>
+    {
+        return total + value;
+    }, 0);
 
     return (
-        <div className={"round-questionnaire-multiple_selections"}>
+        <div className="round-questionnaire-multiple_selections">
             <TextBox className="round-questionnaire-question" text={roundData.question} />
 
-            <div className={"round-questionnaire-multiple_selections-options"}>
+            <div className="round-questionnaire-multiple_selections-options">
                 {roundData.options.map((choice, index) => (
                     <TextButton
                         key={index}
@@ -56,7 +59,7 @@ export default function QuestionnaireRound({ levelHandler })
                         toggled={toggledButtons[index] === 1}
                         callback={() =>
                         {
-                            const newToggledButtons = [...toggledButtons];
+                            const newToggledButtons = [ ...toggledButtons ];
                             newToggledButtons[index] = 1 - newToggledButtons[index];
                             setToggledButtons(newToggledButtons);
                         }}
@@ -66,14 +69,16 @@ export default function QuestionnaireRound({ levelHandler })
 
             <div className="round-questionnaire-multiple_selections-submit">
                 <TextButton
-                    text="Submit"
+                    text={selectedCount === 0 ? "Select at least one answer" : "Submit"}
                     callback={() =>
                     {
-                        if (selectedCount === 0) return;
+                        if (selectedCount === 0)
+                        {
+                            return;
+                        }
 
-                        levelHandler.setNextRound();
                         levelHandler.pushData(toggledButtons);
-                        global_UserData.data["island_01-total_points"] += points || 0;
+                        global_UserData.addIsland01Score(points || 0);
                         setToggledButtons([0, 0, 0, 0]);
                     }}
                 />

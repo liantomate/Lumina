@@ -1,30 +1,29 @@
 import { useEffect, useState } from "react";
-import global_UserData from "../../core/UserData"; 
+import global_UserData from "../../core/UserData";
 import "../../../styles/CongratulationsRound.css";
 
-export default function CongratulationsRound({ levelHandler, onMenuReturn, title = "Level Complete!", subtitle = "Achievements Unlocked" }) 
+export default function CongratulationsRound({ levelHandler, onMenuReturn, onNextLevel, title = "Level Complete!", subtitle = "Achievements Unlocked" })
 {
-    const [achievements, setAchievements] = useState([]);
+    const [ achievements, setAchievements ] = useState([]);
 
-    useEffect(() => 
+    useEffect(() =>
     {
         if (!levelHandler) return;
 
         const currentLevelId = parseInt(`${global_UserData.currentIsland}${global_UserData.currentLevel}`);
         const newlyUnlocked = levelHandler.collectAchievementsForLevel(currentLevelId);
-        
-        const obtainedAchievements = newlyUnlocked.map(achievement => ({
+
+        const obtainedAchievements = newlyUnlocked.map((achievement) => ({
             ...achievement,
             status: "obtained"
         }));
-        
+
         global_UserData.saveAchievements(obtainedAchievements);
-        
         setAchievements(obtainedAchievements);
 
     }, [levelHandler]);
 
-    if (!levelHandler) 
+    if (!levelHandler)
     {
         return (
             <div className="round-congratulations_container">
@@ -35,11 +34,30 @@ export default function CongratulationsRound({ levelHandler, onMenuReturn, title
         );
     }
 
-    const handleDoneClick = () => 
+    const isIsland01NextLevel =
+        global_UserData.currentIsland === 1 &&
+        (
+            global_UserData.currentLevel === 1 ||
+            global_UserData.currentLevel === 2
+        );
+
+    const handleDoneClick = () =>
     {
+        if (isIsland01NextLevel)
+        {
+            global_UserData.incrementLevel();
+
+            if (onNextLevel)
+            {
+                onNextLevel();
+            }
+
+            return;
+        }
+
         global_UserData.incrementLevel();
 
-        if (onMenuReturn) 
+        if (onMenuReturn)
         {
             onMenuReturn();
         }
@@ -51,15 +69,15 @@ export default function CongratulationsRound({ levelHandler, onMenuReturn, title
                 <h1 className="round-congratulations_title">
                     {title}
                 </h1>
-                <button 
-                    className="round-congratulations_button" 
+                <button
+                    className="round-congratulations_button"
                     onClick={handleDoneClick}
                     style={{ position: "relative", zIndex: 9999, cursor: "pointer" }}
                 >
-                    Done
+                    {isIsland01NextLevel ? "Next Level" : "Done"}
                 </button>
             </div>
-            
+
             <div className="round-congratulations_right">
                 <h2 className="round-congratulations_subtitle">
                     {subtitle}
@@ -67,9 +85,9 @@ export default function CongratulationsRound({ levelHandler, onMenuReturn, title
                 {achievements.length > 0 ? (
                     <div className="round-congratulations_achievement_list">
                         {achievements.map((achievement) => (
-                            <AchievementCard 
-                                key={achievement.id} 
-                                achievement={achievement} 
+                            <AchievementCard
+                                key={achievement.id}
+                                achievement={achievement}
                             />
                         ))}
                     </div>
@@ -85,7 +103,7 @@ export default function CongratulationsRound({ levelHandler, onMenuReturn, title
     );
 }
 
-function AchievementCard({ achievement }) 
+function AchievementCard({ achievement })
 {
     return (
         <div className="round-congratulations_card">

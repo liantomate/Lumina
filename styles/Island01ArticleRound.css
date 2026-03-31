@@ -93,3 +93,20 @@
     justify-content: center;
     width: 100%;
 }
+
+.round-island01_article-done_container
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.round-island01_article-done_button
+{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}

@@ -1,8 +1,8 @@
 import LEVEL_DATA from "./LevelData";
 
-class UserData 
+class UserData
 {
-    constructor(currentIsland, currentLevel) 
+    constructor(currentIsland, currentLevel)
     {
         this.currentIsland = currentIsland;
         this.currentLevel = currentLevel;
@@ -10,26 +10,26 @@ class UserData
         this.obtainedAchievements = [];
     }
 
-    incrementLevel() 
+    incrementLevel()
     {
         if (this._incrementing) return;
         this._incrementing = true;
 
-        if (!this.isNextLevelAvailable()) 
+        if (!this.isNextLevelAvailable())
         {
             this.currentLevel = 1;
             this.currentIsland++;
-        } 
-        else 
+        }
+        else
         {
             this.currentLevel++;
         }
 
-        setTimeout(() => {
+        setTimeout(() =>
+        {
             this._incrementing = false;
         }, 100);
 
-        // ...and keeps your debug console.log!
         console.log("user data island, ", this.currentIsland, " , ", this.currentLevel);
     }
 
@@ -38,21 +38,40 @@ class UserData
         return LEVEL_DATA[`${this.currentIsland}${this.currentLevel}`];
     }
 
-    isNextLevelAvailable() 
+    isNextLevelAvailable()
     {
         return LEVEL_DATA[`${this.currentIsland}${this.currentLevel + 1}`] !== undefined;
     }
 
-    saveAchievements(newAchievements) 
+    saveAchievements(newAchievements)
     {
-        newAchievements.forEach((achievement) => 
+        newAchievements.forEach((achievement) =>
         {
-            const alreadyExists = this.obtainedAchievements.find(a => a.id === achievement.id);
-            if (!alreadyExists) 
+            const alreadyExists = this.obtainedAchievements.find((a) => a.id === achievement.id);
+
+            if (!alreadyExists)
             {
                 this.obtainedAchievements.push(achievement);
             }
         });
+    }
+
+    addIsland01Score(points)
+    {
+        const fallbackPoints = Number(points) || 0;
+        const currentScore = Number(this.data["island_01-total_points"]) || 0;
+
+        this.data["island_01-total_points"] = currentScore + fallbackPoints;
+    }
+
+    getIsland01Score()
+    {
+        return Number(this.data["island_01-total_points"]) || 0;
+    }
+
+    resetIsland01Score()
+    {
+        this.data["island_01-total_points"] = 0;
     }
 }
 

@@ -16,27 +16,34 @@ class LevelHandler
 
     setNextRound()
     {
-        this.setExternalRound(this.externalRound + 1);
-        return this.isNextRoundAvailable(this.externalRound + 1);
+        const nextRound = this.externalRound + 1;
+        this.setExternalRound(nextRound);
+        return this.isNextRoundAvailable(nextRound);
     }
 
     getCurrentRoundData()
     {
         if (this.isNextRoundAvailable(this.externalRound))
+        {
             return ROUND_DATA[this.levelData.rounds_list[this.externalRound]];
+        }
+
         return undefined;
     }
 
     getNextRoundData()
     {
         if (this.isNextRoundAvailable(this.externalRound + 1))
+        {
             return ROUND_DATA[this.levelData.rounds_list[this.externalRound + 1]];
+        }
+
         return undefined;
     }
 
-    isNextRoundAvailable()
+    isNextRoundAvailable(roundIndex = this.externalRound)
     {
-        return this.externalRound < this.levelData.rounds_list.length;
+        return roundIndex < this.levelData.rounds_list.length;
     }
 
     pushData(value)
@@ -55,13 +62,13 @@ class LevelHandler
         this.achievements.push(achievement);
     }
 
-     collectAchievementsForLevel(levelId)
+    collectAchievementsForLevel(levelId)
     {
         const newAchievements = ACHIEVEMENTS.filter(
-            a => a.level_id === levelId && !this.achievements.find(ac => ac.id === a.id)
+            (a) => a.level_id === levelId && !this.achievements.find((ac) => ac.id === a.id)
         );
 
-        newAchievements.forEach(a => this.pushAchievement(a));
+        newAchievements.forEach((a) => this.pushAchievement(a));
 
         return newAchievements;
     }
