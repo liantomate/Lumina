@@ -38,10 +38,9 @@
 {
     position: absolute;
     left: 50%;
-    bottom: -11em;
-    width: 150%;
-    height: auto;
-    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    transform: translate(-50%,-1%);
     user-select: none;
     pointer-events: none;
     z-index: 3;
@@ -95,7 +94,8 @@
 
     .component-island_foreground
     {
-        width: 78%;
-        bottom: -3em;
+        width: 100%;
+        bottom: 0;
+        transform: translate(-50%, -7%);
     }
 }

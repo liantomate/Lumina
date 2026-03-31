@@ -48,7 +48,7 @@ export default function MenuState()
                         foregroundSrc={"../../assets/images/foreground.png"}
                         yPos={50}
                         scale={150}
-                    />z
+                    />
 
                     <IslandButton
                         imageSrc={"../../assets/images/island_0222.png"}
