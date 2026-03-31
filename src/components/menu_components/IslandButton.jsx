@@ -9,7 +9,7 @@ import global_UserData from "../../core/UserData";
 import useSoundPlayer from "../../hooks/UseSoundPlayerHook";
 import SOUND_TYPES from "../../utils/SoundTypes";
 
-export default function IslandButton({ imageSrc, yPos, scale }) {
+export default function IslandButton({ imageSrc, yPos, scale=100, flex=1 }) {
     const [ playSFX ] = useSoundPlayer(SOUND_TYPES.ISLAND_CLICKED);
 
     const onButtonClick = () => {
@@ -25,7 +25,7 @@ export default function IslandButton({ imageSrc, yPos, scale }) {
     return (
         <div
             className="component-island"
-            style={{ top: `${yPos}%`, scale: `${scale}%` }}
+            style={{ top: `${yPos}%`, scale: `${scale}%`, flex: `${flex}` }}
             onClick={onButtonClick}>
             <img src={imageSrc} alt="Island" />
         </div>

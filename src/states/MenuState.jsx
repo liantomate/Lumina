@@ -44,10 +44,9 @@ export default function MenuState() {
                 <div className="menu-background-gradient"></div>
 
                 <div className="menu-island_container">
-                    <IslandButton imageSrc={"../../assets/images/island_01.png"} yPos={20} scale={100} />
-                    <IslandButton imageSrc={"../../assets/images/island_01.png"} yPos={120} scale={100} />
-                    <IslandButton imageSrc={"../../assets/images/island_01.png"} yPos={220} scale={100} />
-                    <IslandButton imageSrc={"../../assets/images/island_01.png"} yPos={320} scale={100} />
+                    <IslandButton imageSrc={"../../assets/images/island_01.png"} yPos={20}  flex={1} />
+                    <IslandButton imageSrc={"../../assets/images/island_02.png"} yPos={120} flex={1} />
+                    <IslandButton imageSrc={"../../assets/images/island_03.png"} yPos={220} flex={2} />
                 </div>
             </div>
         </>

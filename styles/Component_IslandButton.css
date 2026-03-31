@@ -1,5 +1,5 @@
 .component-island {
-    position: absolute;
+    position: relative;
     width: 50%;
     height: 100vh;
     left: 2em;
@@ -16,6 +16,8 @@
 }
 
 .component-island img {
+    position: relative;
+    top: 3em;
     width: 100%;
     height: auto;
 
