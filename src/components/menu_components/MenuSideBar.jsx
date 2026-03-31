@@ -245,7 +245,7 @@ export default function SideBar({ userData = { achievements: [] } })
                     imagePath="../../assets/svgs/github_icon.svg"
                     callback={() =>
                         window.open(
-                            "https://github.com/liantomate/web_design_cpe_olympiad_2026",
+                            "./",   // TODO: BRING BACK THE REPOSITORY
                             "_blank"
                         )
                     }
