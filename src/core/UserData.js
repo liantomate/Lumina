@@ -75,5 +75,5 @@ class UserData
     }
 }
 
-const global_UserData = new UserData(1, 1);
+const global_UserData = new UserData(2, 2);
 export default global_UserData;
