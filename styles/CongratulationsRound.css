@@ -1,130 +1,179 @@
-.congrats-main-rect {
-   position: fixed;
-   top: 80px;
-   bottom: 0;
-   left: 0;
-   right: 0;
-
-   display: flex;
-   flex-direction: row;
-
-   background-color: var(--bg-secondary-dark);
+.round-congratulations_container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    padding: 3rem 2rem;
+    gap: 2rem;
+    box-sizing: border-box;
+    background-color: var(--bg-primary-dark);
+    color: var(--text-main);
+    align-items: stretch;
 }
 
-/* Left column */
-.congrats-left {
+.round-congratulations_left {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 60px;
-    
-    border-right: 4px solid #011122; /*The one that creates the line in the middle*/
-    padding: 20px;
-}
-
-.congrats-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 30px;
-}
-/*Left*/
-.congrats-left > .congrats-achievement {
-    width: 100%;
-    max-width: 400px;
-
-    height: auto;
-    min-height: 100px;
-
-    background-color: var(--ui-box-primary-light);
-    border: 4px solid var(--ui-accent);
-
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 15px 10px;
-}
-/*RIGHT UP BOX small top*/
-.congrats-right > .congrats-achievement:first-child {
-    width: 100%;
-    height: auto;
-    min-height: 100px;
-
-    background-color: var(--ui-box-primary-light);
-    border: 4px solid var(--ui-accent);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 10px;
-}
-/*Right Bottom Box large*/
-.congrats-right > .congrats-achievement:last-child{
-    width: 100%;
-    flex: 1;
-
-    background-color: var(--ui-box-primary-light);
-    border: 4px solid var(--ui-accent);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+    min-width: 300px;
+    text-align: center;
 }
 
-.congrats-achievement img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 5px;
+.round-congratulations_title {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    color: var(--ui-box-primary-light);
+    text-shadow: 3px 3px 0 var(--ui-accent);
+    letter-spacing: 2px;
 }
 
-.congrats-achievement h1{
-    font-family: 'Gamer', 'Lucida Console', monospace;
+.round-congratulations_button {
+    padding: 0.8rem 3rem;
     font-size: 2.5rem;
-    line-height: 0.9;
-    margin: 0;
-    text-align: center;
-    color: var(--text-inverse);
-    text-transform: uppercase;
+    font-family: 'Gamer', 'Lucida Console', monospace;
+    cursor: pointer;
+    background-color: var(--theme-btn-bg);
+    color: #FFFFFF;
+    border: 4px solid var(--theme-btn-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 0 var(--theme-btn-border);
 }
 
-.congrats-achievement p {
-    font-family: 'Gamer', 'Lucida Console', monospace;
-    font-size: 1.3rem;
-    line-height: 1.1;
-    margin: 5px 0 0 0;
-    text-align: center;
+.round-congratulations_button:hover {
+    background-color: var(--theme-btn-hover);
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--theme-btn-border);
+}
+
+.round-congratulations_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background-color: var(--bg-secondary-dark);
+    border: 4px solid var(--ui-landscape-dark);
+    border-radius: 12px;
+    padding: 2rem;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.round-congratulations_subtitle {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.round-congratulations_achievement_list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    gap: 1.5rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    padding-right: 1rem;
+    align-content: flex-start;
+}
+
+.round-congratulations_achievement_list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.round-congratulations_achievement_list::-webkit-scrollbar-track {
+    background: var(--bg-primary-dark);
+    border-radius: 4px;
+}
+
+.round-congratulations_achievement_list::-webkit-scrollbar-thumb {
+    background: var(--ui-landscape-dark);
+    border-radius: 4px;
+}
+
+.round-congratulations_card {
+    display: flex;
+    align-items: center;
+    background-color: var(--ui-box-primary-light);
+    border: 4px solid var(--ui-accent);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.round-congratulations_card_info {
+    display: flex;
+    flex-direction: column;
     color: var(--text-inverse);
+}
+
+.round-congratulations_card_title {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text-inverse);
+}
+
+.round-congratulations_card_description {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.round-congratulations_empty_message {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
-    .congrats-main-rect {
-        position: relative;
-        top: 0;
-        margin-top: 90px;
+    .round-congratulations_container {
         flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        overflow: hidden;
+    }
+
+    .round-congratulations_left {
+        min-height: 0;
+        flex: 0 0 auto;
+        padding-top: 1rem;
+    }
+
+    .round-congratulations_title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .round-congratulations_button {
+        font-size: 2rem;
+        padding: 0.6rem 2.5rem;
+    }
+
+    .round-congratulations_right {
+        flex: 1 1 auto;
+        width: 100%;
+        padding: 1.5rem;
         height: auto;
-        bottom: auto;
+        overflow: hidden;
     }
 
-    .congrats-left {
-        border-right: none;
-        border-bottom: 6px solid #011122;
-    }
-
-    .congrats-right > .congrats-achievement:last-child {
-        min-height: 250px;
-    }
-
-    .congrats-achievement h1 {
+    .round-congratulations_subtitle {
         font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
-    .congrats-achievement p {
-        font-size: 1rem;
+
+    .round-congratulations_card {
+        flex: 1 1 100%;
+    }
+
+    .round-congratulations_empty_message {
+        font-size: 1.2rem;
+        margin-top: 1rem;
     }
 }

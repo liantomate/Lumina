@@ -1,29 +1,99 @@
-export default function CongratulationsRound({ levelHandler }) {
-    const testAchievements = [
-        { name: "Achievement 1", description: "Completed first task", icon: null },
-        { name: "Achievement 2", description: "Second milestone", icon: null },
-        { name: "Achievement 3", description: "Third milestone", icon: null },
-        { name: "Achievement 4", description: "Fourth milestone", icon: null },
-    ];
+import { useEffect, useState } from "react";
+// Ensure this path perfectly matches your folder structure
+import global_UserData from "../../core/UserData"; 
+// Ensure your CSS file is actually imported so the flexbox layout applies
+import "../../../styles/CongratulationsRound.css";
 
-    const renderAchievement = (achievement) => (
-        <div className="congrats-achievement">
-            {achievement.icon && <img src={achievement.icon} alt={achievement.name} />}
-            <h1>{achievement.name}</h1>
-            {achievement.description && <p>{achievement.description}</p>}
-        </div>
-    );
+export default function CongratulationsRound({ levelHandler, onMenuReturn, title = "Level Complete!", subtitle = "Achievements Unlocked" }) 
+{
+    const [achievements, setAchievements] = useState([]);
+
+    useEffect(() => 
+    {
+        // SAFEGUARD: Prevent crash if the parent hasn't passed the handler yet
+        if (!levelHandler) 
+        {
+            return;
+        }
+
+        const currentLevelId = parseInt(`${global_UserData.currentIsland}${global_UserData.currentLevel}`);
+        const newlyUnlocked = levelHandler.collectAchievementsForLevel(currentLevelId);
+        
+        global_UserData.saveAchievements(newlyUnlocked);
+        setAchievements([...levelHandler.achievements]);
+    }, [levelHandler]);
+
+    // SAFEGUARD: Show a fallback UI instead of crashing to a white screen
+    if (!levelHandler) 
+    {
+        return (
+            <div className="round-congratulations_container">
+                <h1 className="round-congratulations_title">
+                    Loading results...
+                </h1>
+            </div>
+        );
+    }
+
+    const handleDoneClick = () => 
+    {
+        global_UserData.incrementLevel();
+        if (onMenuReturn) 
+        {
+            onMenuReturn();
+        }
+    };
 
     return (
-        <div className="congrats-main-rect">
-    <div className="congrats-left">
-        {renderAchievement(testAchievements[0])}
-        {renderAchievement(testAchievements[1])}
-    </div>
-    <div className="congrats-right">
-        {renderAchievement(testAchievements[2])}
-        {renderAchievement(testAchievements[3])}
-    </div>
-</div>
+        <div className="round-congratulations_container">
+            <div className="round-congratulations_left">
+                <h1 className="round-congratulations_title">
+                    {title}
+                </h1>
+                <button 
+                    className="round-congratulations_button" 
+                    onClick={handleDoneClick}
+                >
+                    Done
+                </button>
+            </div>
+            <div className="round-congratulations_right">
+                <h2 className="round-congratulations_subtitle">
+                    {subtitle}
+                </h2>
+                {achievements.length > 0 ? (
+                    <div className="round-congratulations_achievement_list">
+                        {achievements.map((achievement) => (
+                            <AchievementCard 
+                                key={achievement.id} 
+                                achievement={achievement} 
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="round-congratulations_empty_message">
+                        <p className="round-congratulations_text">
+                            No achievements obtained for this level.
+                        </p>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
+
+function AchievementCard({ achievement }) 
+{
+    return (
+        <div className="round-congratulations_card">
+            <div className="round-congratulations_card_info">
+                <h3 className="round-congratulations_card_title">
+                    {achievement.name}
+                </h3>
+                <p className="round-congratulations_card_description">
+                    {achievement.description}
+                </p>
+            </div>
+        </div>
     );
 }

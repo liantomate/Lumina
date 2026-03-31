@@ -1,17 +1,18 @@
 import LEVEL_DATA from "./LevelData";
 
-class UserData {
+class UserData 
+{
     constructor(currentIsland, currentLevel) 
     {
         this.currentIsland = currentIsland;
         this.currentLevel = currentLevel;
-
         this.data = {};
+        this.obtainedAchievements = [];
     }
 
-    incrementLevel()
+    incrementLevel() 
     {
-        if(!this.isNextLevelAvailable())
+        if (!this.isNextLevelAvailable()) 
         {
             this.currentLevel = 1;
             this.currentIsland++;
@@ -20,9 +21,20 @@ class UserData {
         this.currentLevel++;
     }
 
-    isNextLevelAvailable()
+    isNextLevelAvailable() 
     {
         return LEVEL_DATA[`l${this.currentIsland}${this.currentLevel + 1}`] !== undefined;
+    }
+
+    saveAchievements(newAchievements) 
+    {
+        newAchievements.forEach((achievement) => 
+        {
+            if (!this.obtainedAchievements.find(a => a.id === achievement.id)) 
+            {
+                this.obtainedAchievements.push(achievement);
+            }
+        });
     }
 }
 
