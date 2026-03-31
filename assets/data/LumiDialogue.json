@@ -1,0 +1,67 @@
+{
+  "intro_website": [
+    { "speaker": "Lumi", "emotion": "mystical", "text": "Welcome, seeker, step inside, where scattered truths and paths collide. Answer whispers, soft yet clear, and let your hidden self appear. Piece by piece, your fate you’ll see, the missing part is simply thee." },
+    { "speaker": "Lumi", "emotion": "excited", "text": "Well then, Let us embark on our journey to… PRAEFERENTIARUM!" }
+  ],
+  "intro_island_2": [
+    { "speaker": "Lumi", "emotion": "happy", "text": "Are you ready to dive into the world of technology?\nWelcome to CURRICULUM CONSPECTUS! Where strategy meets innovation’s beat, ideas and imagination seamlessly greet!" },
+    { "speaker": "Lumi", "emotion": "explaining", "text": "Here lies three doors of common courses, for the path to the digital must be witnessed. Choose your key with curious force, let guided minds be gently assisted." },
+    { "speaker": "Lumi", "emotion": "mystical", "text": "Through circuits, code, and networks wide, your skills and passions are enlisted. Until these roads converge as one, where futures blend and dreams are twisted." }
+  ],
+  "island_2_level_1_rules": [
+    { "speaker": "Lumi", "emotion": "mystical", "text": "Tap four cards in order wise, let logic be your guide. For when the sequence truly aligns, the hidden code shall rise inside." },
+    { "speaker": "Lumi", "emotion": "thinking", "text": "But err in order, wait you must till all are pressed to see. Then back they turn, try once again to claim the path to mastery." },
+    { "speaker": "Lumi", "emotion": "explaining", "text": "Meaning… select the four cards in the correct order using logic and attention. When the sequence is correct, the cards combine to reveal the code and its meaning." },
+    { "speaker": "Lumi", "emotion": "explaining", "text": "If the order is wrong, the result will only appear after all cards are selected, then the round resets so you can try again." }
+  ],
+  "island_2_level_1_end": [
+    { "speaker": "Lumi", "emotion": "happy", "text": "Great job! Let’s move onto the next level!" },
+    { "speaker": "Lumi", "emotion": "thinking", "text": "It seems that Computer Science and Computer Engineering are connected because both involve programming. Interesting." }
+  ],
+  "island_2_level_2_rules": [
+    { "speaker": "Lumi", "emotion": "mystical", "text": "Drag and place each component with care, letting logic guide your design. When the rightful pieces unite in their proper order, the system awakens and springs to life before your eyes." },
+    { "speaker": "Lumi", "emotion": "mystical", "text": "Should a false piece be set, the realm will tremble and thine pieces return from whence they came, urging you to try again until thy circuit stands in glory and fame. A guide shall cometh when thine wishes." },
+    { "speaker": "Lumi", "emotion": "explaining", "text": "Meaning… Carefully drag and place each component in the correct order, using logic to guide your design. When all pieces are correctly arranged, the system will activate and function as intended." },
+    { "speaker": "Lumi", "emotion": "explaining", "text": "If an incorrect component is placed, the screen will shake and the piece will return to your inventory, requiring you to try again until the circuit is successfully completed. A guide will be provided if you wish." }
+  ],
+  "island_2_level_2_end": [
+    { "speaker": "Lumi", "emotion": "explaining", "text": "It also seems that Computer Engineering and Electronics Engineering are connected because both work with circuits and hardware, but Electronics Engineering focuses on designing electronic components and devices, while Computer Engineering combines that with programming and system design to build functional computers and smart devices." }
+  ],
+  "island_2_level_4_summary": [
+    { "speaker": "Lumi", "emotion": "explaining", "text": "To summarize, the code from Computer Science guides how data moves through circuits from Electronics Engineering." },
+    { "speaker": "Lumi", "emotion": "happy", "text": "Together, the signals and processed circuits/data become the input for the final system. This means you have experienced all three disciplines working together, showing how Computer Engineering integrates programming, circuit design, and electrical engineering." }
+  ],
+  "island_2_level_4_questionnaire_prompt": [
+    { "speaker": "Lumi", "emotion": "asking", "text": "With this in mind, would you like to explore more about CpE (Computer Engineering)?" }
+  ],
+  "island_2_level_4_answer_yes": [
+    { "speaker": "Lumi", "emotion": "excited", "text": "What are we waiting for? Let’s go!" }
+  ],
+  "island_2_level_4_answer_no": [
+    { "speaker": "Lumi", "emotion": "thinking", "text": "Well, I think we should still explore the area ahead, don't you think? You never know what kind of knowledge awaits ahead." },
+    { "speaker": "Lumi", "emotion": "happy", "text": "After all, we’re adventurers! This way our adventure can be considered complete." }
+  ],
+  "intro_island_3": [
+    { "speaker": "Lumi", "emotion": "thinking", "text": "It seems that this place is connected to CpE, specifically about its courses and career paths." }
+  ],
+  "island_3_level_1_rules": [
+    { "speaker": "Lumi", "emotion": "mystical", "text": "It says here… piece to puzzle, complete to shine, Connect them all, let skills align." }
+  ],
+  "island_3_level_1_end": [
+    { "speaker": "Lumi", "emotion": "explaining", "text": "CpE is a 4-year degree program. I think that the puzzle you completed shows subjects you will go through if you are to choose CpE as your program for college." }
+  ],
+  "island_3_level_1_after_puzzle": [
+    { "speaker": "Lumi", "emotion": "thinking", "text": "It seems that this place showed you all of the courses/subjects of CpE huh? Hmm… I wonder what the next island is going to be?" }
+  ],
+  "intro_island_4": [
+    { "speaker": "Lumi", "emotion": "mystical", "text": "Ehem, enter the realm, for thou shall see, what one can do if one graduates from CpE" }
+  ],
+  "final_conclusion": [
+    { "speaker": "Lumi", "emotion": "happy", "text": "Now that you have seen it all, CpE is amazing isn’t it? It combines several knowledge and skill sets from related career paths such as computer science, electronics engineering, and electrical engineering, integrating these into computer systems ensuring proper flow of algorithms to hardware components." },
+    { "speaker": "Lumi", "emotion": "explaining", "text": "It also provides broad work opportunities, meaning that every computer engineer out there becomes a specialist under a specific process. Not to mention, the high salary, hehe." },
+    { "speaker": "Lumi", "emotion": "thinking", "text": "Well, what do you think? Do you think that CpE is a great degree program? Hehe… that answer is for you to keep to yourself." }
+  ],
+  "ending_dialogue": [
+    { "speaker": "Lumi", "emotion": "excited", "text": "Thank you for exploring this journey with me, and I hope you had a lot of fun and learned more about CpE! Until we meet again!" }
+  ]
+}
