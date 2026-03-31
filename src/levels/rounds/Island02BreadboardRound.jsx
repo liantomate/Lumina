@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import "../../styles/Round_Island02BreadboardRound.css";
+import "../../../styles/Island02BreadboardRound.css";
 
 export default function Island02BreadboardRound()
 {
