@@ -23,7 +23,7 @@
 
     user-select: none;
     pointer-events: none;
-    animation: bob 10s ease-in-out infinite;
+    animation: bob 5s ease-in-out infinite;
 }
 
 @keyframes bob {
